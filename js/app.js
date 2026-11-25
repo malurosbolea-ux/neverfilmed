@@ -95,11 +95,11 @@ const SERVICES = [
     t: { en: 'Reels & social content', es: 'Reels y contenido para redes' },
     d: { en: 'Reels, TikToks, carousels and UGC-style ads designed to stop the scroll and get saved.', es: 'Reels, TikToks, carruseles y anuncios estilo UGC pensados para frenar el scroll y que los guarden.' },
     tags: ['Reels', 'TikTok', { en: 'Carousels', es: 'Carruseles' }, { en: 'UGC-style ads', es: 'Anuncios estilo UGC' }] },
-  { ic: 'banner', go: 'gallery', go_l: { en: 'See the banners', es: 'Ver los banners' }, media: { i: 'media/stills/banner-burger.webp' }, chip: { en: 'Banners', es: 'Banners' },
+  { ic: 'banner', go: 'branding', go_l: { en: 'See the banners', es: 'Ver los banners' }, media: { i: 'media/stills/banner-burger.webp' }, chip: { en: 'Banners', es: 'Banners' },
     t: { en: 'Banners & display ads', es: 'Banners y anuncios display' },
     d: { en: 'Campaign sets for Meta, Google and out-of-home, with variants ready for A/B testing.', es: 'Packs de campaña para Meta, Google y exterior, con variantes listas para test A/B.' },
     tags: ['Meta Ads', 'Google Display', { en: 'Out-of-home', es: 'Exterior' }, { en: 'A/B variants', es: 'Variantes A/B' }] },
-  { ic: 'photo', go: 'gallery', go_l: { en: 'See the photography', es: 'Ver la fotografía' }, media: { i: 'media/stills/model-jewellery.webp', pos: '50% 30%' }, chip: { en: 'Product photos', es: 'Fotos de producto' },
+  { ic: 'photo', go: 'ai-brand', go_l: { en: 'See the AI product work', es: 'Ver el producto con IA' }, media: { i: 'media/stills/model-jewellery.webp', pos: '50% 30%' }, chip: { en: 'Product photos', es: 'Fotos de producto' },
     t: { en: 'Product photography & brand worlds', es: 'Foto de producto y mundos de marca' },
     d: { en: 'Packshots, lifestyle, packaging and characters that stay the same across a whole campaign.', es: 'Packshots, lifestyle, packaging y personajes que se mantienen iguales durante toda la campaña.' },
     tags: ['Packshots', 'Lifestyle', 'Packaging', { en: 'Moodboards', es: 'Moodboards' }] },
@@ -287,13 +287,6 @@ const CASES = [
     did: [{ en: 'Strategy', es: 'Estrategia' }, { en: 'Carousels', es: 'Carruseles' }, 'Reels', { en: 'Community management', es: 'Community management' }],
     ar: '4/5', n: 6, tiles: [{ v: 'elan-r1' }, { i: 'elan-1' }, { i: 'elan-2' }, { v: 'elan-r2' }, { i: 'elan-3' }, { i: 'elan-4' }],
     link: { en: 'Open the profile ↗', es: 'Abrir el perfil ↗' } },
-  { id: 'conf', name: { en: 'Confidential project', es: 'Proyecto confidencial' }, handle: 'NDA', av: '✦',
-    badge: { en: 'Under NDA', es: 'Bajo NDA' }, sector: { en: 'AI reels for a client', es: 'Reels con IA para un cliente' },
-    craft: { en: 'Generative AI', es: 'IA generativa' },
-    d: { en: 'Vertical AI reels from concept stills to finished video, with one consistent art direction. Made together with marketer Irene Puche.', es: 'Reels verticales con IA, de las imágenes de concepto al vídeo final, con una dirección de arte coherente. Hechos junto a la especialista en marketing Irene Puche.' },
-    did: [{ en: 'AI video', es: 'Vídeo con IA' }, { en: 'Art direction', es: 'Dirección de arte' }, 'Reels'],
-    ar: '9/16', n: 4, tiles: [{ v: 'conf-1' }, { v: 'conf-2' }, { v: 'conf-3' }, { v: 'conf-4' }],
-    credit: { url: 'https://irenepuche.com', t: 'irenepuche.com ↗' } },
   { id: 'yuuju', name: 'Yuuju', handle: { en: 'Home fibre', es: 'Fibra para el hogar' }, av: 'Y',
     badge: { en: 'Campaign', es: 'Campaña' }, sector: { en: 'Telecoms · home fibre installation', es: 'Telecomunicaciones · instalación de fibra' },
     craft: { en: 'Graphic design & motion', es: 'Diseño gráfico y motion' },
@@ -346,13 +339,100 @@ function renderCases() {
   }).join('');
 }
 
-const PAGES = {
-  home: { n: 0, en: 'Home', es: 'Inicio' }, work: { n: 1, en: 'Work', es: 'Trabajos' }, services: { n: 2, en: 'Services', es: 'Servicios' },
-  studio: { n: 3, en: 'Studio', es: 'Estudio' }, pricing: { n: 4, en: 'Pricing', es: 'Precios' }, contact: { n: 5, en: 'Contact', es: 'Contacto' }
+
+const AIF = {
+  outfit: { g: 'brand', m: 'iivii', t: 'MRB Outfit',
+    d: { en: 'A pastel loungewear set with monogram embroidery, scalloped trims, satin bows and a matching scrunchie: product sheet, on-model lifestyle images and a short product video.', es: 'Un conjunto de pijama pastel con monograma bordado, ribetes festoneados, lazos de satén y coletero a juego: ficha de producto, fotos lifestyle con modelo y un vídeo corto.' },
+    wf: { en: 'Built end to end in Magnific: product sheet first, then on-model stills and video developed from it.', es: 'Hecho entero en Magnific: primero la ficha de producto y, a partir de ella, las fotos con modelo y el vídeo.' },
+    tags: [{ en: 'Fashion', es: 'Moda' }, { en: 'Product sheet', es: 'Ficha de producto' }, { en: 'On-model', es: 'Con modelo' }, { en: 'Gen-video', es: 'Vídeo IA' }] },
+  jewellery: { g: 'brand', m: 'iivii', t: 'MRB Jewellery',
+    d: { en: 'A gold jewellery concept: a sculptural engraved cuff and baroque pearl drop earrings with pavé details, with product shots, on-model images and a short video.', es: 'Un concepto de joyería en oro: un brazalete escultórico grabado y pendientes de perla barroca con pavé, con fotos de producto, con modelo y un vídeo corto.' },
+    tags: [{ en: 'Jewellery', es: 'Joyería' }, { en: 'Monogram', es: 'Monograma' }, { en: 'On-model', es: 'Con modelo' }, { en: 'Gen-video', es: 'Vídeo IA' }] },
+  confidential: { g: 'brand', m: 'vvvvvv', t: { en: 'Confidential project', es: 'Proyecto confidencial' }, nda: true,
+    d: { en: 'Real client work we can’t name yet: AI reels made with marketer Irene Puche, from concept stills to finished vertical video, with one art direction across the whole series.', es: 'Trabajo real para un cliente que aún no podemos nombrar: reels con IA hechos con la especialista en marketing Irene Puche, de las imágenes de concepto al vídeo vertical final, con una sola dirección de arte en toda la serie.' },
+    wf: { en: 'Magnific, Seedance, Kling and Nano Banana Pro: concept stills first, then image-to-video.', es: 'Magnific, Seedance, Kling y Nano Banana Pro: primero las imágenes de concepto y después imagen a vídeo.' },
+    tags: [{ en: 'Under NDA', es: 'Bajo NDA' }, { en: 'Real client', es: 'Cliente real' }, 'Reels'], credit: true },
+  packaging: { g: 'brand', m: 'iii', t: 'MRB Packaging', sw: ['#f5ede9', '#ecc9c9', '#c69c97', '#946a65', '#7b4062'],
+    d: { en: 'A packaging system: shopping bag, mailer box with ribbon and card, and a skincare unboxing kit. One dusty-rose palette and serif logotype from the logo to the unboxing.', es: 'Un sistema de packaging: bolsa, caja con lazo y tarjeta, y un kit de cosmética para el unboxing. Una paleta rosa empolvado y un logotipo serif del logo al unboxing.' },
+    tags: ['Packaging', { en: 'Brand identity', es: 'Identidad de marca' }, 'Unboxing'] },
+  atelier: { g: 'brand', m: 'iiii', t: { en: 'MRB Atelier: sketch to runway', es: 'MRB Atelier: del boceto a la pasarela' }, sw: ['#f6eee8', '#efd3cc', '#e3b2a8', '#c98f86', '#8f5e58'],
+    d: { en: 'One gown through the whole fashion process: watercolour sketch, fabric study, the dress on the mannequin and the final runway look, with colour, drape and cut identical at every stage.', es: 'Un vestido por todo el proceso de moda: boceto en acuarela, estudio de tejido, el vestido en el maniquí y el look final en pasarela, con el mismo color, caída y corte en cada paso.' },
+    tags: [{ en: 'Fashion', es: 'Moda' }, { en: 'Design process', es: 'Proceso de diseño' }] },
+  moodboards: { g: 'brand', m: 'ivii', t: { en: 'Brand moodboards', es: 'Moodboards de marca' }, sw: ['#fcf5e9', '#e8bc9b', '#ea9475', '#cf7d4b', '#74968f'],
+    d: { en: 'Visual direction for an example brand: a peach, pool-water and amber-glass universe. Palette, texture and light come first, then stills and a short motion piece.', es: 'Dirección visual para una marca de ejemplo: un universo de melocotón, agua de piscina y cristal ámbar. Primero la paleta, la textura y la luz; después las imágenes y una pieza en movimiento.' },
+    tags: [{ en: 'Art direction', es: 'Dirección de arte' }, 'Moodboard'] },
+  hospitality: { g: 'food', m: 'viiiiiivv', t: { en: 'MRB culinary & hospitality campaign', es: 'MRB: campaña gastronómica' },
+    d: { en: 'A premium restaurant launch: brand details, interior atmosphere, plated dishes, cocktails and short campaign films, consistent in identity, light, food styling and motion.', es: 'El lanzamiento de un restaurante premium: detalles de marca, ambiente del local, platos, cócteles y vídeos de campaña, coherentes en identidad, luz, food styling y movimiento.' },
+    tags: [{ en: 'Hospitality', es: 'Hostelería' }, { en: 'Food styling', es: 'Food styling' }, { en: 'Campaign film', es: 'Vídeo de campaña' }] },
+  analog: { g: 'food', m: 'iiviii', t: { en: 'Analog film diaries', es: 'Diarios en carrete' },
+    d: { en: 'A 35mm-style UGC series like the ones cafés use on social: direct flash, grain and imperfect framing, held in one pastel colour story.', es: 'Una serie UGC con estética de 35 mm como las que usan las cafeterías en redes: flash directo, grano y encuadres imperfectos, todo en una misma historia de color pastel.' },
+    wf: { en: 'We prompt the film stock, flash and grain instead of adding a filter afterwards.', es: 'Pedimos el carrete, el flash y el grano en el prompt en vez de poner un filtro después.' },
+    tags: ['UGC', { en: '35mm look', es: 'Estética 35 mm' }, 'Lifestyle'] },
+  closeups: { g: 'characters', m: 'vvvvvv', t: { en: 'Character close-ups', es: 'Primeros planos de personaje' },
+    d: { en: 'Video focused on facial detail, micro-expressions and skin texture, keeping the same identity from the first frame to the last.', es: 'Vídeo centrado en el detalle del rostro, las microexpresiones y la textura de la piel, con la misma identidad del primer al último fotograma.' },
+    wf: { en: 'Seedance and Google Flow image-to-video, from one reference portrait per character.', es: 'Seedance y Google Flow de imagen a vídeo, a partir de un retrato de referencia por personaje.' },
+    tags: [{ en: 'Identity', es: 'Identidad' }, { en: 'Realism', es: 'Realismo' }, { en: 'Gen-video', es: 'Vídeo IA' }] },
+  scenes: { g: 'characters', m: 'iiiii', t: { en: 'Scenes with characters', es: 'Escenas con personajes' },
+    d: { en: 'Consistent characters placed in different settings, poses and framing without losing who they are.', es: 'Personajes coherentes en distintos escenarios, poses y encuadres sin perder quiénes son.' },
+    tags: [{ en: 'Composition', es: 'Composición' }, { en: 'Consistency', es: 'Coherencia' }] },
+  sheets: { g: 'characters', m: 'iiiiiiii', t: { en: 'Character sheets', es: 'Fichas de personaje' },
+    d: { en: 'Turnarounds and reference sheets that keep anatomy, face and styling coherent from every angle, the base for every scene and video.', es: 'Giros y fichas de referencia que mantienen anatomía, rostro y estilismo desde todos los ángulos: la base de cada escena y cada vídeo.' },
+    tags: [{ en: 'Turnarounds', es: 'Giros 360' }, { en: 'Consistency', es: 'Coherencia' }] },
+  environments: { g: 'worlds', m: 'iiiii', t: { en: 'Environments', es: 'Espacios' },
+    d: { en: 'One space, five lighting scenarios: geometry, materials and camera stay identical while only the light changes, from daylight to golden hour and night.', es: 'Un espacio y cinco iluminaciones: la geometría, los materiales y la cámara no cambian, solo la luz, del día a la hora dorada y la noche.' },
+    tags: [{ en: 'Relighting', es: 'Reiluminación' }, { en: 'Consistency', es: 'Coherencia' }] },
+  cabin: { g: 'worlds', m: 'ivi', t: { en: 'One place, three seasons', es: 'Un lugar, tres estaciones' },
+    d: { en: 'The same lakeside cabin through spring, summer and autumn, with architecture and palette held steady while season and light change.', es: 'La misma cabaña junto al lago en primavera, verano y otoño, con la arquitectura y la paleta intactas mientras cambian la estación y la luz.' },
+    tags: [{ en: 'Seasons', es: 'Estaciones' }, { en: 'Consistency', es: 'Coherencia' }] }
 };
-const SUB = { social: 'work', commercials: 'work', websites: 'work', apps: 'work', gallery: 'work', process: 'services', faq: 'studio' };
+const aiItems = k => AIF[k].m.split('').map((c, i) => ({ v: c === 'v', src: `media/ai/${k}-${i + 1}.${c === 'v' ? 'mp4' : 'webp'}`, poster: `media/ai/${k}-${i + 1}.webp` }));
+const TOOLKIT = [
+  ['Seedance 2.5', { en: 'Reference-driven video with control over performance, light and camera. Our go-to for consistent characters.', es: 'Vídeo guiado por referencias con control de interpretación, luz y cámara. Nuestro favorito para personajes coherentes.' }],
+  ['Kling 3.0', { en: 'Multi-shot cinematic video with native audio and element references that lock characters across camera moves.', es: 'Vídeo cinematográfico multiplano con audio nativo y referencias que mantienen a los personajes en cada movimiento de cámara.' }],
+  ['Higgsfield', { en: 'One workspace for the leading image and video models, with cinematic camera-motion control.', es: 'Un mismo espacio para los mejores modelos de imagen y vídeo, con control cinematográfico de cámara.' }],
+  ['Magnific', { en: 'Creative upscaling, relighting and multi-model image and video generation.', es: 'Escalado creativo, reiluminación y generación de imagen y vídeo con varios modelos.' }],
+  ['Google Veo 3.1 & Flow', { en: 'Text and image to video with native audio, plus shot-by-shot filmmaking in Flow.', es: 'De texto e imagen a vídeo con audio nativo, y cine plano a plano en Flow.' }],
+  ['Omni 1.2', { en: 'Video model behind our Titanium, Sneakers and Clair de Lune spots.', es: 'El modelo de vídeo detrás de los anuncios Titanium, Sneakers y Clair de Lune.' }],
+  ['Nano Banana Pro & Imagen', { en: 'Image generation and editing, compositing and consistent variations.', es: 'Generación y edición de imagen, composición y variaciones coherentes.' }],
+  ['Runway Gen-4.5', { en: 'Controllable image-to-video and AI editing for fast iteration.', es: 'Imagen a vídeo controlable y edición con IA para iterar rápido.' }],
+  ['Seedream', { en: 'High-fidelity images with strong multi-reference control for character and style.', es: 'Imágenes de alta fidelidad con mucho control de referencias para personaje y estilo.' }],
+  ['Midjourney', { en: 'Art direction exploration, style references and concept development.', es: 'Exploración de dirección de arte, referencias de estilo y desarrollo de conceptos.' }],
+  ['Canva AI', { en: 'Fast product, set and model stills, like the ones behind the Petal Glow spot.', es: 'Imágenes rápidas de producto, decorado y modelo, como las del anuncio Petal Glow.' }],
+  ['Gemini, ChatGPT & Claude', { en: 'Prompt engineering, ideation, research and workflow support.', es: 'Ingeniería de prompts, ideación, investigación y apoyo en el flujo de trabajo.' }]
+];
+const BRANDING = [
+  ['banner-yuuju', 'Yuuju', { en: 'Campaign banner · telecoms', es: 'Banner de campaña · telecomunicaciones' }, 3, 0],
+  ['banner-beer', 'The Best Beer', { en: 'Print ad', es: 'Anuncio impreso' }, 0.707, 1],
+  ['banner-sushi', 'Japan Food', { en: 'Branding & social ad', es: 'Branding y anuncio para redes' }, 0.8, 1],
+  ['banner-burger', 'Burger Bar', { en: 'Food & beverage banner', es: 'Banner de restauración' }, 2, 1]
+];
+function renderAI() {
+  $$('.folders').forEach(box => {
+    box.innerHTML = Object.entries(AIF).filter(([, f]) => f.g === box.dataset.group).map(([k, f]) => {
+      const items = aiItems(k), shown = items.slice(0, 4), extra = items.length - shown.length;
+      const tiles = shown.map((it, i) => `<button type="button" class="ftile" data-folder="${k}" data-i="${i}" data-cursor="${it.v ? 'Play' : 'Open'}">
+        <img src="${it.poster}" alt="" loading="lazy">${it.v ? '<span class="pl" aria-hidden="true"></span>' : ''}${extra > 0 && i === shown.length - 1 ? `<span class="more">+${extra}</span>` : ''}</button>`).join('');
+      const sw = f.sw ? `<div class="swatches">${f.sw.map(c => `<i style="background:${c}"></i>`).join('')}</div>` : '';
+      const credit = f.credit ? `<small class="credit">${t2({ en: 'Made with Irene Puche', es: 'Hecho con Irene Puche' })} · <a href="https://irenepuche.com" target="_blank" rel="noopener">irenepuche.com ↗</a></small>` : '';
+      return `<article class="folder${f.nda ? ' nda' : ''}"><div class="ftiles n${shown.length}">${tiles}</div>
+        <div class="finfo"><div class="fhead">${t2(f.t, 'h4')}${t2({ en: items.length + ' pieces', es: items.length + ' piezas' }, 'span', 'fcount')}</div>${t2(f.d, 'p')}
+        ${f.wf ? `<p class="wf"><b>${t2({ en: 'Workflow', es: 'Proceso' })}</b> ${t2(f.wf)}</p>` : ''}${sw}
+        <div class="tags">${f.tags.map(x => t2(x)).join('')}</div>${credit}</div></article>`;
+    }).join('');
+  });
+  $('#toolGrid').innerHTML = TOOLKIT.map(([n, d]) => `<div class="tk"><b>${esc(n)}</b>${t2(d, 'p')}</div>`).join('');
+  const card = (b, i) => `<button type="button" class="bcard" style="--ar:${b[3]}" data-b="${i}" data-cursor="Open"><img src="media/stills/${b[0]}.webp" alt="" loading="lazy"><span><b>${esc(b[1])}</b>${t2(b[2], 'small')}</span></button>`;
+  $('#brandGrid').innerHTML = [0, 1].map(r => `<div class="brow">${BRANDING.map((b, i) => (b[4] === r ? card(b, i) : '')).join('')}</div>`).join('');
+}
+
+const PAGES = {
+  home: { n: 0, en: 'Home', es: 'Inicio' }, ai: { n: 1, en: 'AI Portfolio', es: 'Portfolio IA' }, work: { n: 2, en: 'Work', es: 'Trabajos' }, services: { n: 3, en: 'Services', es: 'Servicios' },
+  studio: { n: 4, en: 'Studio', es: 'Estudio' }, pricing: { n: 5, en: 'Pricing', es: 'Precios' }, contact: { n: 6, en: 'Contact', es: 'Contacto' }
+};
+const SUB = { commercials: 'ai', 'ai-brand': 'ai', 'ai-food': 'ai', 'ai-characters': 'ai', 'ai-worlds': 'ai', toolkit: 'ai', social: 'work', websites: 'work', apps: 'work', branding: 'work', process: 'services', faq: 'studio' };
 const LEVELS = [
-  { p: 'work', media: { v: 'media/ads/titanium.mp4', p: 'media/posters/titanium.webp' }, d: { en: '7 AI commercials, social media for 7 accounts, 4 live websites, apps, photography and banners.', es: '7 anuncios con IA, redes de 7 cuentas, 4 webs en directo, apps, foto y banners.' } },
+  { p: 'ai', media: { v: 'media/ads/titanium.mp4', p: 'media/posters/titanium.webp' }, d: { en: '7 AI commercials, product and fashion concepts, food, characters, worlds and our toolkit.', es: '7 anuncios con IA, producto y moda, gastronomía, personajes, mundos y nuestro toolkit.' } },
+  { p: 'work', media: { i: 'media/shots/tech-d-3.webp', pos: '50% 50%' }, d: { en: 'Social media for 5 brands, 4 live websites, their apps and branding.', es: 'Redes de 5 marcas, 4 webs en directo, sus apps y branding.' } },
   { p: 'services', media: { v: 'media/ads/morning.mp4', p: 'media/posters/morning.webp' }, d: { en: 'Commercials, web, apps, social media, reels, banners, photography and ads.', es: 'Anuncios, webs, apps, redes sociales, reels, banners, foto y campañas.' } },
   { p: 'studio', media: { i: 'media/founder.webp', pos: '50% 22%' }, d: { en: 'Who we are, how we think and the FAQ.', es: 'Quiénes somos, cómo pensamos y las preguntas frecuentes.' } },
   { p: 'pricing', pastel: true, d: { en: 'Negotiable plans built around your budget.', es: 'Planes negociables a medida de tu presupuesto.' } },
@@ -372,7 +452,7 @@ function renderLevels() {
   }).join('');
 }
 
-renderTools(); renderServices(); renderCine(); renderSites(); renderPhones(); renderGallery(); renderSteps(); renderPlans(); renderFaq(); renderChips(); renderLevels(); renderCases();
+renderTools(); renderServices(); renderCine(); renderSites(); renderPhones(); renderSteps(); renderPlans(); renderFaq(); renderChips(); renderLevels(); renderCases(); renderAI();
 
 const audio = createAudio();
 const G = window.gsap, ST = window.ScrollTrigger;
@@ -392,7 +472,7 @@ function paintManifesto(p) {
   manifestoWords.forEach((w, i) => w.classList.toggle('on', i < n));
 }
 function splitTitles() {
-  $$('.phead-title').forEach(h => { h.innerHTML = h.textContent.split('').map(c => `<span class="ch">${esc(c)}</span>`).join(''); });
+  $$('.phead-title').forEach(h => { h.innerHTML = h.textContent.split('').map(c => `<span class="ch">${c === ' ' ? '&nbsp;' : esc(c)}</span>`).join(''); });
 }
 function fitBig() {
   $$('.phead-title,.footer-word').forEach(el => {
@@ -466,26 +546,41 @@ showAd(0, false);
 
 const lb = $('#lightbox'), lbv = $('#lbVideo'), lbi = $('#lbImg');
 let musicWasOn = false;
-function openLB(i) {
-  const a = ADS[i];
-  vid.pause();
-  musicWasOn = audio.on; if (musicWasOn) audio.stop();
-  lbi.hidden = true; lbv.hidden = false; $('#lbHD').hidden = false;
-  lbv.src = `media/ads/${a.id}.mp4`; lbv.poster = `media/posters/${a.id}.webp`;
-  $('#lbTitle').textContent = a.title; $('#lbHD').href = a.hd;
-  lb.hidden = false; lenis && lenis.stop();
-  lbv.play().catch(() => {});
-  $('#lbClose').focus();
+let lbList = [], lbIdx = 0;
+function lbShow() {
+  const it = lbList[lbIdx];
+  $('#lbTitle').textContent = it.title || '';
+  $('#lbCount').textContent = lbList.length > 1 ? `${lbIdx + 1} / ${lbList.length}` : '';
+  $('#lbPrev').hidden = $('#lbNext').hidden = lbList.length < 2;
+  $('#lbHD').hidden = !it.hd; if (it.hd) $('#lbHD').href = it.hd;
+  if (it.v) { lbi.hidden = true; lbi.removeAttribute('src'); lbv.hidden = false; lbv.poster = it.poster || ''; lbv.src = it.src; lbv.play().catch(() => {}); }
+  else { lbv.pause(); lbv.removeAttribute('src'); lbv.hidden = true; lbi.hidden = false; lbi.src = it.src; }
 }
-function openMedia(kind, src, title) {
+function openList(list, idx) {
   vid.pause();
-  musicWasOn = audio.on; if (musicWasOn && kind === 'v') audio.stop(); else musicWasOn = false;
-  $('#lbHD').hidden = true; $('#lbTitle').textContent = title;
-  if (kind === 'v') { lbi.hidden = true; lbv.hidden = false; lbv.poster = src.replace('.mp4', '.webp'); lbv.src = src; lbv.play().catch(() => {}); }
-  else { lbv.pause(); lbv.hidden = true; lbi.hidden = false; lbi.src = src; }
+  musicWasOn = audio.on && list.some(x => x.v); if (musicWasOn) audio.stop();
+  lbList = list; lbIdx = idx; lbShow();
   lb.hidden = false; lenis && lenis.stop(); $('#lbClose').focus();
 }
-$('#cases').addEventListener('click', e => { const t = e.target.closest('.tile'); if (!t) return; audio.click(); openMedia(t.dataset.media, t.dataset.src, t.dataset.title); });
+function lbStep(d) { if (lbList.length < 2) return; lbIdx = (lbIdx + d + lbList.length) % lbList.length; audio.tick(); lbShow(); }
+$('#lbPrev').addEventListener('click', () => lbStep(-1));
+$('#lbNext').addEventListener('click', () => lbStep(1));
+addEventListener('keydown', e => { if (lb.hidden) return; if (e.key === 'ArrowRight') lbStep(1); if (e.key === 'ArrowLeft') lbStep(-1); });
+function openLB(i) {
+  const a = ADS[i];
+  openList([{ v: true, src: `media/ads/${a.id}.mp4`, poster: `media/posters/${a.id}.webp`, title: a.title, hd: a.hd }], 0);
+}
+$('#cases').addEventListener('click', e => {
+  const t = e.target.closest('.tile'); if (!t) return; audio.click();
+  const tiles = $$('.tile', t.closest('.case'));
+  openList(tiles.map(x => ({ v: x.dataset.media === 'v', src: x.dataset.src, poster: x.dataset.src.replace('.mp4', '.webp'), title: x.dataset.title })), tiles.indexOf(t));
+});
+document.addEventListener('click', e => {
+  const f = e.target.closest('.ftile');
+  if (f) { audio.click(); const k = f.dataset.folder, f0 = AIF[k]; const title = T(f0.t); openList(aiItems(k).map(x => ({ ...x, title })), +f.dataset.i); return; }
+  const b = e.target.closest('.bcard');
+  if (b) { audio.click(); openList(BRANDING.map(x => ({ v: false, src: `media/stills/${x[0]}.webp`, title: x[1] })), +b.dataset.b); }
+});
 function closeLB() {
   lbi.hidden = true; lbi.removeAttribute('src');
   lbv.pause(); lbv.removeAttribute('src'); lbv.load(); lb.hidden = true; lenis && lenis.start();
@@ -533,7 +628,7 @@ $('#hero').addEventListener('click', e => {
   if (e.target.closest('a,button') || !stage) return;
   const i = stage.getHovered(); if (i < 0) return;
   const k = ADS.findIndex(a => a.id === HELIX_AD[i]);
-  go('work', { sub: 'commercials' }).then(() => showAd(k));
+  go('ai', { sub: 'commercials' }).then(() => showAd(k));
 });
 
 /* ---------------- cursor + trail ---------------- */
@@ -672,8 +767,8 @@ function parseHash(h) { h = (h || '').replace('#', ''); if (PAGES[h]) return [h,
 function showPage(name) {
   $$('.page').forEach(p => { p.hidden = p.dataset.page !== name; });
   document.body.classList.toggle('on-home', name === 'home');
-  document.body.classList.toggle('night', name === 'work');
-  nav.classList.toggle('dark', name === 'work');
+  document.body.classList.toggle('night', name === 'work' || name === 'ai');
+  nav.classList.toggle('dark', name === 'work' || name === 'ai');
   $$('[data-page]').forEach(a => { if (a.closest('.nav-links,.mobile-menu')) a.classList.toggle('on', a.dataset.page === name); });
   if (stage) stage.setActive(name === 'home');
   $$('.page[hidden] video').forEach(v => v.pause());
@@ -764,10 +859,15 @@ function initPage(name, again = false) {
     const sk = G.quickTo('.marquee-track', 'skewX', { duration: 0.4, ease: 'power3' });
     ST.create({ trigger: '.tools', start: 'top bottom', end: 'bottom top', onUpdate: s => sk(G.utils.clamp(-8, 8, s.getVelocity() / -180)) });
   }
-  if (name === 'work') {
+  if (name === 'ai') {
     G.fromTo('#cineScreen', { scale: 0.82, borderRadius: 70 }, { scale: 1, borderRadius: 26, ease: 'none', scrollTrigger: { trigger: '#commercials', start: 'top 95%', end: 'top 25%', scrub: true } });
     G.from('#cineList li', { x: 60, opacity: 0, stagger: 0.07, duration: 0.8, ease: 'power3.out', scrollTrigger: { trigger: '#cineList', start: 'top 85%', once: true } });
-    ['commercials', 'social', 'websites', 'apps', 'gallery'].forEach(id => ST.create({ trigger: '#' + id, start: 'top 50%', end: 'bottom 50%', onToggle: s => { if (s.isActive) $$('.subnav button').forEach(b => b.classList.toggle('on', b.dataset.go === id)); } }));
+    ['commercials', 'ai-brand', 'ai-food', 'ai-characters', 'ai-worlds', 'toolkit'].forEach(id => ST.create({ trigger: '#' + id, start: 'top 50%', end: 'bottom 50%', onToggle: s => { if (s.isActive) $$('#page-ai .subnav button').forEach(b => b.classList.toggle('on', b.dataset.go === id)); } }));
+    $$('.folder', root).forEach(f => G.from(f, { y: 80, opacity: 0, rotateX: 10, duration: 1, ease: 'expo.out', scrollTrigger: { trigger: f, start: 'top 90%', once: true } }));
+    G.from('.tk', { y: 40, opacity: 0, stagger: 0.05, duration: 0.8, ease: 'power3.out', scrollTrigger: { trigger: '#toolGrid', start: 'top 85%', once: true } });
+  }
+  if (name === 'work') {
+    ['social', 'websites', 'apps', 'branding'].forEach(id => ST.create({ trigger: '#' + id, start: 'top 50%', end: 'bottom 50%', onToggle: s => { if (s.isActive) $$('#page-work .subnav button').forEach(b => b.classList.toggle('on', b.dataset.go === id)); } }));
     const tilt = [-26, -10, 10, 26];
     $$('.phone-wrap').forEach((p, i) => G.fromTo(p, { rotateY: tilt[i % 4], rotateX: 22, y: [140, 50, 90, 180][i % 4], opacity: 0.3 }, { rotateY: 0, rotateX: 0, y: 0, opacity: 1, ease: 'none', scrollTrigger: { trigger: '#phones', start: 'top 95%', end: 'center 55%', scrub: true } }));
     const mm = G.matchMedia();
@@ -841,12 +941,12 @@ const A = {
   hi: { en: "Hi! I'm Frame, Neverfilmed's assistant. Ask me about services, social media, prices, timing, tools or our work.", es: '¡Hola! Soy Frame, el asistente de Neverfilmed. Pregúntame por servicios, redes sociales, precios, plazos, herramientas o nuestros trabajos.' },
   price: { en: 'Our prices are negotiable: every project is quoted around your budget. Brands usually start with one piece (Spark), launch with a full pack (Launch) or keep us monthly for social media and ads (Always-on). Tell me roughly what you want to invest. <a href="#pricing">See the plans</a>', es: 'Nuestros precios son negociables: cada proyecto se presupuesta a partir de lo que quieras invertir. Normalmente las marcas empiezan con una pieza (Spark), lanzan con un pack completo (Launch) o nos tienen cada mes para redes y anuncios (Always-on). Dime más o menos cuánto quieres invertir. <a href="#pricing">Ver los planes</a>' },
   time: { en: 'It depends on the scope, and we confirm a calendar in every proposal. You get a first visual concept quickly, and urgent launches are possible.', es: 'Depende del alcance, y confirmamos un calendario en cada propuesta. Recibes un primer concepto visual enseguida y podemos asumir lanzamientos urgentes.' },
-  tools: { en: 'We direct Higgsfield, Seedance 2.5, Kling 3.0, Veo 3, Nano Banana Pro, Magnific, Omni 1.2, Google Flow and Canva AI for images and video, and build websites with Three.js and GSAP.', es: 'Dirigimos Higgsfield, Seedance 2.5, Kling 3.0, Veo 3, Nano Banana Pro, Magnific, Omni 1.2, Google Flow y Canva AI para imagen y vídeo, y programamos las webs con Three.js y GSAP.' },
+  tools: { en: 'We direct Higgsfield, Seedance 2.5, Kling 3.0, Veo 3, Nano Banana Pro, Magnific, Omni 1.2, Google Flow and Canva AI for images and video, and build websites with Three.js and GSAP. <a href="#toolkit">See the toolkit</a>', es: 'Dirigimos Higgsfield, Seedance 2.5, Kling 3.0, Veo 3, Nano Banana Pro, Magnific, Omni 1.2, Google Flow y Canva AI para imagen y vídeo, y programamos las webs con Three.js y GSAP. <a href="#toolkit">Ver el toolkit</a>' },
   social: { en: 'Yes, we manage social media: strategy, content calendar, posting, community management and a monthly report on Instagram, TikTok and LinkedIn. We create all the content too, from reels to carousels. <a href="#social">See our social media work</a>', es: 'Sí, llevamos redes sociales: estrategia, calendario, publicación, community management e informe mensual en Instagram, TikTok y LinkedIn. Además creamos todo el contenido, de reels a carruseles. <a href="#social">Ver nuestras redes</a>' },
   ads: { en: 'We make AI commercials for TV, web and social: launches, beauty, fashion, tech and jewellery. Seven of them are here: <a href="#commercials">watch the commercials</a>', es: 'Hacemos anuncios con IA para televisión, web y redes: lanzamientos, belleza, moda, tecnología y joyería. Aquí tienes siete: <a href="#commercials">ver los anuncios</a>' },
   web: { en: 'We design and code websites from scratch: e-commerce, hospitality and portfolios, bilingual, with 3D and scroll storytelling. <a href="#websites">See them live</a>', es: 'Diseñamos y programamos webs desde cero: e-commerce, hostelería y portfolios, bilingües, con 3D y storytelling con scroll. <a href="#websites">Verlas en directo</a>' },
   app: { en: 'We turn your website into an iPhone and Android app with the same brand, native navigation, ordering and bookings. <a href="#apps">See the apps</a>', es: 'Convertimos tu web en app para iPhone y Android con la misma marca, navegación nativa, pedidos y reservas. <a href="#apps">Ver las apps</a>' },
-  photo: { en: 'Product photography, packaging, fashion, food, consistent characters and banner sets for Meta and Google. <a href="#gallery">See the gallery</a>', es: 'Foto de producto, packaging, moda, comida, personajes coherentes y packs de banners para Meta y Google. <a href="#gallery">Ver la galería</a>' },
+  photo: { en: 'Product photography, packaging, fashion, food, consistent characters and banner sets for Meta and Google. <a href="#ai-brand">See the AI portfolio</a>', es: 'Foto de producto, packaging, moda, comida, personajes coherentes y packs de banners para Meta y Google. <a href="#ai-brand">Ver el portfolio IA</a>' },
   rights: { en: 'Final files are delivered for your commercial use, and the usage terms are written into each proposal. We work with tools whose plans allow commercial use.', es: 'Los archivos finales se entregan para tu uso comercial y las condiciones de uso van por escrito en cada propuesta. Trabajamos con herramientas cuyos planes permiten el uso comercial.' },
   contact: { en: 'Write to malurosbolea@gmail.com or call +34 692 892 183. You can also type your email here and I’ll add it to the form. <a href="#contact">Open the form</a>', es: 'Escribe a malurosbolea@gmail.com o llama al +34 692 892 183. También puedes escribir aquí tu email y lo añado al formulario. <a href="#contact">Abrir el formulario</a>' },
   services: { en: 'AI commercials, websites, apps, social media management, reels, banners, product photography and ad campaigns (SEO, SEM, Meta and Google Ads). <a href="#services">See everything</a>', es: 'Anuncios con IA, webs, apps, gestión de redes sociales, reels, banners, foto de producto y campañas (SEO, SEM, Meta y Google Ads). <a href="#services">Ver todo</a>' },

@@ -46,6 +46,7 @@
     <span class="brand-word">Neverfilmed</span>
   </a>
   <nav class="nav-links" aria-label="Main">
+    <a href="#ai" data-page="ai" data-es="Portfolio IA">AI Portfolio</a>
     <a href="#work" data-page="work" data-es="Trabajos">Work</a>
     <a href="#services" data-page="services" data-es="Servicios">Services</a>
     <a href="#studio" data-page="studio" data-es="Estudio">Studio</a>
@@ -64,6 +65,7 @@
 </header>
 <div class="mobile-menu" id="mobileMenu" hidden>
   <a href="#home" data-page="home" data-es="Inicio">Home</a>
+  <a href="#ai" data-page="ai" data-es="Portfolio IA">AI Portfolio</a>
   <a href="#work" data-page="work" data-es="Trabajos">Work</a>
   <a href="#services" data-page="services" data-es="Servicios">Services</a>
   <a href="#studio" data-page="studio" data-es="Estudio">Studio</a>
@@ -91,7 +93,7 @@
       <div class="hero-bottom">
         <p class="hero-sub" data-es="Anuncios, webs, apps, redes sociales, reels, banners y fotografía de producto con IA generativa. Sin cámaras ni rodajes, con dirección humana en cada fotograma.">Commercials, websites, apps, social media, reels, banners and product photography made with generative AI. No cameras, no shoots, human direction in every frame.</p>
         <div class="hero-ctas">
-          <a class="btn btn-iri magnetic" href="#work" data-page="work" data-es="Ver trabajos">See the work</a>
+          <a class="btn btn-iri magnetic" href="#ai" data-page="ai" data-es="Ver el portfolio IA">See the AI portfolio</a>
           <a class="btn btn-glass magnetic" href="#contact" data-page="contact" data-es="Cuéntanos tu idea">Tell us your idea</a>
         </div>
       </div>
@@ -124,25 +126,34 @@
   </section>
 </section>
 
-<!-- ================= WORK ================= -->
-<section class="page page-night" data-page="work" id="page-work" hidden>
+<!-- ================= AI PORTFOLIO ================= -->
+<section class="page page-night" data-page="ai" id="page-ai" hidden>
   <header class="phead">
     <div class="phead-media"><video muted loop playsinline preload="none" data-src="media/ads/obsidian.mp4" poster="media/posters/obsidian.webp"></video></div>
     <div class="phead-text">
       <span class="phead-lvl" data-es="Nivel 1">Level 1</span>
-      <h1 class="phead-title" data-es="Trabajos">Work</h1>
-      <p class="phead-sub" data-es="Anuncios, webs, apps, foto y banners. MRB es nuestra marca concepto: oficio real, cliente ficticio. Lo que hacemos para marcas reales queda bajo confidencialidad.">Commercials, websites, apps, photography and banners. MRB is our in-house concept brand: real craft, fictional client. Work for real brands stays under NDA.</p>
+      <h1 class="phead-title" data-es="Portfolio IA">AI Portfolio</h1>
+      <p class="phead-sub" data-es="Todo lo que hacemos con IA generativa: anuncios, producto, moda, comida, personajes y mundos, con la misma cara, el mismo producto y la misma luz de principio a fin.">Everything we make with generative AI: commercials, product, fashion, food, characters and worlds, with the same face, product and light from start to finish.</p>
     </div>
     <span class="phead-scroll" data-es="Haz scroll para entrar">Scroll to enter</span>
   </header>
 
-  <nav class="subnav" aria-label="Work">
+  <nav class="subnav" aria-label="AI Portfolio">
     <button type="button" data-go="commercials" data-es="Anuncios">Commercials</button>
-    <button type="button" data-go="social" data-es="Redes sociales">Social media</button>
-    <button type="button" data-go="websites" data-es="Webs">Websites</button>
-    <button type="button" data-go="apps">Apps</button>
-    <button type="button" data-go="gallery" data-es="Foto y banners">Photo &amp; banners</button>
+    <button type="button" data-go="ai-brand" data-es="Marca y producto">Brand &amp; product</button>
+    <button type="button" data-go="ai-food" data-es="Gastronomía">Food</button>
+    <button type="button" data-go="ai-characters" data-es="Personajes">Characters</button>
+    <button type="button" data-go="ai-worlds" data-es="Mundos">Worlds</button>
+    <button type="button" data-go="toolkit">Toolkit</button>
   </nav>
+
+  <div class="ai-intro band">
+    <p class="ai-lead" data-esh="La IA es nuestra capa de producción, <em>no</em> un sustituto del criterio de diseño.">AI is our production layer, <em>not</em> a replacement for design thinking.</p>
+    <div class="ai-notes">
+      <p data-es="Por los acuerdos de confidencialidad con las marcas con las que trabajamos, no podemos enseñar la mayoría de proyectos reales. Lo que ves aquí sigue exactamente el mismo método, prompts y dirección creativa.">Because of confidentiality agreements with the brands we work with, we can't show most real projects. What you see here follows exactly the same method, prompts and creative direction.</p>
+      <p data-es="MRB y Malu son marcas ficticias que hemos creado para enseñar procesos completos (moodboard, packaging, producto, hostelería y vídeo) sin exponer material de clientes.">MRB and Malu are fictional brands we created to show complete workflows (moodboards, packaging, product, hospitality and video) without exposing client material.</p>
+    </div>
+  </div>
 
   <div class="commercials band" id="commercials" data-unlock="commercials" data-en-label="AI commercials" data-es-label="Anuncios con IA">
     <div class="sub-head">
@@ -163,6 +174,50 @@
     </div>
   </div>
 
+
+  <div class="ai-group band" id="ai-brand" data-unlock="ai-brand" data-en-label="Brand & product" data-es-label="Marca y producto">
+    <div class="sub-head"><h2 class="h3" data-es="Marca y producto">Brand &amp; product concepts</h2><p data-es="Fichas de producto, imágenes con modelo, packaging, moda y moodboards.">Product sheets, on-model imagery, packaging, fashion and moodboards.</p></div>
+    <div class="folders" data-group="brand"></div>
+  </div>
+  <div class="ai-group band" id="ai-food" data-unlock="ai-food" data-en-label="Food & hospitality" data-es-label="Gastronomía y hostelería">
+    <div class="sub-head"><h2 class="h3" data-es="Gastronomía y hostelería">Food &amp; hospitality</h2><p data-es="Branding de restaurante, dirección de arte culinaria y vídeo de campaña.">Restaurant branding, culinary art direction and campaign film.</p></div>
+    <div class="folders" data-group="food"></div>
+  </div>
+  <div class="ai-group band" id="ai-characters" data-unlock="ai-characters" data-en-label="Characters" data-es-label="Personajes">
+    <div class="sub-head"><h2 class="h3" data-es="Personajes e identidad">Characters &amp; identity</h2><p data-es="La misma cara, del primer plano a la escena completa.">The same face, from close-up to full scene.</p></div>
+    <div class="folders" data-group="characters"></div>
+  </div>
+  <div class="ai-group band" id="ai-worlds" data-unlock="ai-worlds" data-en-label="Worlds" data-es-label="Mundos">
+    <div class="sub-head"><h2 class="h3" data-es="Lugares y luz">Places &amp; light</h2><p data-es="El mismo lugar con distinta luz y distintas estaciones.">The same place, different light and seasons.</p></div>
+    <div class="folders" data-group="worlds"></div>
+  </div>
+  <div class="toolkit band" id="toolkit" data-unlock="toolkit" data-en-label="Toolkit" data-es-label="Toolkit">
+    <div class="sub-head"><h2 class="h3">Toolkit</h2><p data-es="Los modelos y plataformas que dirigimos. Elegimos el mejor para cada plano.">The models and platforms we direct. We pick the best one for each shot.</p></div>
+    <div class="tool-grid" id="toolGrid"></div>
+    <a class="tiktok-cta" href="https://www.tiktok.com/@boleadelmar" target="_blank" rel="noopener"><b data-es="Compartimos trucos de IA en TikTok">We share AI tips on TikTok</b><span>@boleadelmar ↗</span></a>
+  </div>
+  <div class="next-level band"><a class="next-btn" href="#work" data-page="work"><span data-es="Siguiente nivel">Next level</span><b data-es="Trabajos →">Work →</b></a></div>
+</section>
+
+<!-- ================= WORK ================= -->
+<section class="page page-night" data-page="work" id="page-work" hidden>
+  <header class="phead">
+    <div class="phead-media"><video muted loop playsinline preload="none" data-src="media/social/elan-r1.mp4" poster="media/social/elan-r1.webp"></video></div>
+    <div class="phead-text">
+      <span class="phead-lvl" data-es="Nivel 2">Level 2</span>
+      <h1 class="phead-title" data-es="Trabajos">Work</h1>
+      <p class="phead-sub" data-es="Redes sociales, webs, apps y branding: estrategia y diseño para marcas reales y para nuestras marcas concepto.">Social media, websites, apps and branding: strategy and design for real brands and for our concept brands.</p>
+    </div>
+    <span class="phead-scroll" data-es="Haz scroll para entrar">Scroll to enter</span>
+  </header>
+
+  <nav class="subnav" aria-label="Work">
+    <button type="button" data-go="social" data-es="Redes sociales">Social media</button>
+    <button type="button" data-go="websites" data-es="Webs">Websites</button>
+    <button type="button" data-go="apps">Apps</button>
+    <button type="button" data-go="branding" data-es="Branding">Branding</button>
+  </nav>
+
   <div class="social band" id="social" data-unlock="social" data-en-label="Social media" data-es-label="Redes sociales">
     <div class="sub-head">
       <h2 class="h3" data-es="Redes sociales">Social media</h2>
@@ -171,7 +226,7 @@
     <div class="social-stats">
       <div><b>10K+</b><span data-es="comunidad de Élan que llevamos hoy">Élan community we run today</span></div>
       <div><b>20K+</b><span data-es="seguidores en el perfil de creadora de la fundadora">followers on our founder's creator profile</span></div>
-      <div><b>6</b><span data-es="marcas con estrategia y contenido">brands with strategy and content</span></div>
+      <div><b>5</b><span data-es="marcas con estrategia y diseño">brands with strategy and design</span></div>
       <div><b>3</b><span data-es="plataformas: Instagram, TikTok y LinkedIn">platforms: Instagram, TikTok and LinkedIn</span></div>
     </div>
     <div class="cases" id="cases"></div>
@@ -193,12 +248,12 @@
     <div class="phones" id="phones"></div>
   </div>
 
-  <div class="gallery band" id="gallery" data-unlock="gallery" data-en-label="Photo & banners" data-es-label="Foto y banners">
+  <div class="branding band" id="branding" data-unlock="branding" data-en-label="Branding & ads" data-es-label="Branding y publicidad">
     <div class="sub-head">
-      <h2 class="h3" data-es="Foto de producto, mundos y banners">Product photography, worlds &amp; banners</h2>
-      <p data-es="Joyería, packaging, moda, comida, personajes coherentes y banners listos para campaña.">Jewellery, packaging, fashion, food, consistent characters and campaign-ready banners.</p>
+      <h2 class="h3" data-es="Branding y publicidad">Branding &amp; advertising</h2>
+      <p data-es="Identidad visual y piezas de campaña con impacto: banners, cartelería y anuncios para redes, hechos con diseño gráfico.">Visual identity and campaign pieces with impact: banners, posters and social ads, made with graphic design.</p>
     </div>
-    <div class="cols" id="galleryCols"></div>
+    <div class="brand-grid" id="brandGrid"></div>
   </div>
   <div class="next-level band"><a class="next-btn" href="#services" data-page="services"><span data-es="Siguiente nivel">Next level</span><b data-es="Servicios →">Services →</b></a></div>
 </section>
@@ -208,7 +263,7 @@
   <header class="phead">
     <div class="phead-media"><video muted loop playsinline preload="none" data-src="media/ads/petal.mp4" poster="media/posters/petal.webp"></video></div>
     <div class="phead-text">
-      <span class="phead-lvl" data-es="Nivel 2">Level 2</span>
+      <span class="phead-lvl" data-es="Nivel 3">Level 3</span>
       <h1 class="phead-title" data-es="Servicios">Services</h1>
       <p class="phead-sub" data-es="Un solo estudio para la idea, la imagen, el sitio donde vive y las redes que la mueven.">One studio for the idea, the image, the place it lives and the social channels that move it.</p>
     </div>
@@ -237,7 +292,7 @@
   <header class="phead">
     <div class="phead-media"><img src="media/founder.webp" alt="" style="object-position:50% 25%"></div>
     <div class="phead-text">
-      <span class="phead-lvl" data-es="Nivel 3">Level 3</span>
+      <span class="phead-lvl" data-es="Nivel 4">Level 4</span>
       <h1 class="phead-title" data-es="Estudio">Studio</h1>
       <p class="phead-sub" data-es="Datos y dirección creativa en el mismo equipo.">Data and creative direction in the same team.</p>
     </div>
@@ -276,7 +331,7 @@
   <header class="phead phead-orb">
     <div class="phead-media"><div class="orb-art" aria-hidden="true"><i></i><i></i><i></i></div></div>
     <div class="phead-text">
-      <span class="phead-lvl" data-es="Nivel 4">Level 4</span>
+      <span class="phead-lvl" data-es="Nivel 5">Level 5</span>
       <h1 class="phead-title" data-es="Precios">Pricing</h1>
       <p class="phead-sub" data-es="Negociables. Lo construimos alrededor de tu presupuesto.">Negotiable. We build it around your budget.</p>
     </div>
@@ -297,7 +352,7 @@
 <section class="page" data-page="contact" id="page-contact" hidden>
   <section class="contact band" data-unlock="contact" data-en-label="Final level" data-es-label="Último nivel">
     <div class="contact-side">
-      <span class="phead-lvl" data-es="Nivel 5">Level 5</span>
+      <span class="phead-lvl" data-es="Nivel 6">Level 6</span>
       <h1 class="h2 contact-title" data-es="Hablemos de tu proyecto">Let's talk about your project</h1>
       <p class="lead" data-es="Cuéntanos qué necesitas y con qué presupuesto. Te respondemos con una propuesta, un calendario y un primer concepto visual.">Tell us what you need and your budget. We reply with a proposal, a timeline and a first visual concept.</p>
       <dl class="direct">
@@ -351,6 +406,7 @@
   <div class="footer-row band">
     <p data-es="© 2026 Neverfilmed. Ni un solo fotograma de esta web se ha grabado.">© 2026 Neverfilmed. Not a single frame on this site was filmed.</p>
     <nav aria-label="Footer">
+      <a href="#ai" data-page="ai" data-es="Portfolio IA">AI Portfolio</a>
       <a href="#work" data-page="work" data-es="Trabajos">Work</a>
       <a href="#services" data-page="services" data-es="Servicios">Services</a>
       <a href="#pricing" data-page="pricing" data-es="Precios">Pricing</a>
@@ -363,10 +419,14 @@
 <!-- Lightbox -->
 <div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Video" data-lenis-prevent>
   <div class="lightbox-inner">
-    <video id="lbVideo" controls playsinline></video>
-    <img id="lbImg" alt="" hidden>
+    <div class="lb-stage">
+      <button type="button" class="lb-nav lb-prev" id="lbPrev" aria-label="Previous">‹</button>
+      <video id="lbVideo" controls playsinline></video>
+      <img id="lbImg" alt="" hidden>
+      <button type="button" class="lb-nav lb-next" id="lbNext" aria-label="Next">›</button>
+    </div>
     <div class="lightbox-bar">
-      <span id="lbTitle"></span>
+      <span id="lbTitle"></span><small id="lbCount"></small>
       <a id="lbHD" href="#" target="_blank" rel="noopener" data-es="Ver en HD en Drive ↗">Watch in HD on Drive ↗</a>
       <button type="button" class="lb-close" id="lbClose" data-es="Cerrar">Close</button>
     </div>

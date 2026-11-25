@@ -5,6 +5,15 @@
    TYPE   Unbounded (display) + Manrope (text) + Instrument Serif italic accents
    LAYOUT full-bleed hero with title bottom-left; pinned horizontal services; dark cinema band; stacked browsers; phones row; parallax columns */
 
+@font-face{font-family:"Unbounded";src:url(../fonts/unbounded-latin-500-normal.woff2) format("woff2");font-weight:500;font-display:swap}
+@font-face{font-family:"Unbounded";src:url(../fonts/unbounded-latin-600-normal.woff2) format("woff2");font-weight:600;font-display:swap}
+@font-face{font-family:"Unbounded";src:url(../fonts/unbounded-latin-700-normal.woff2) format("woff2");font-weight:700;font-display:swap}
+@font-face{font-family:"Unbounded";src:url(../fonts/unbounded-latin-800-normal.woff2) format("woff2");font-weight:800;font-display:swap}
+@font-face{font-family:"Manrope";src:url(../fonts/manrope-latin-400-normal.woff2) format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"Manrope";src:url(../fonts/manrope-latin-500-normal.woff2) format("woff2");font-weight:500;font-display:swap}
+@font-face{font-family:"Manrope";src:url(../fonts/manrope-latin-600-normal.woff2) format("woff2");font-weight:600;font-display:swap}
+@font-face{font-family:"Manrope";src:url(../fonts/manrope-latin-700-normal.woff2) format("woff2");font-weight:700;font-display:swap}
+@font-face{font-family:"Instrument Serif";src:url(../fonts/instrument-serif-latin-400-italic.woff2) format("woff2");font-weight:400;font-style:italic;font-display:swap}
 :root{
   color-scheme:light;
   --bg:#F3F0FF;--bg2:#EAF1FF;--card:rgba(255,255,255,.55);
@@ -24,6 +33,7 @@ img,video{max-width:100%;display:block}
 a{color:inherit}
 button{font:inherit;color:inherit}
 ::selection{background:var(--lilac);color:var(--ink)}
+[hidden]{display:none!important}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
 .band{padding-block:clamp(56px,8vw,128px);padding-left:max(5vw,16px);padding-right:max(5vw,16px)}
 .h2{font:600 clamp(34px,5.4vw,76px)/1.02 var(--fd);letter-spacing:-.035em;margin:0 0 18px;text-wrap:balance}
@@ -591,3 +601,52 @@ body.intro-on{overflow:hidden}
 .nav.hide~.hud{transform:translateY(-70px)}
 .hud{transition:opacity .8s var(--ease),transform .5s var(--ease),background .4s,color .4s}
 @media (max-width:600px){.hud{top:74px}.toast{top:120px}}
+
+/* ===== fit big type ===== */
+.phead-text{width:100%;max-width:none}
+.phead-title{white-space:nowrap}
+.warp-name{white-space:nowrap}
+
+/* ===== services -> examples ===== */
+.svc{cursor:pointer}
+.svc-link{display:inline-flex;align-items:center;gap:8px;align-self:flex-start;min-height:44px;padding:0 18px;border-radius:999px;background:var(--ink);color:#fff;font-weight:700;font-size:14px;text-decoration:none;transition:transform .4s var(--ease),background .3s}
+.svc-link:hover{transform:translateX(4px);background:#2A2266}
+.svc .tags{margin-top:auto}
+
+/* ===== social media cases ===== */
+.social{padding-top:40px}
+.social-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-bottom:26px}
+.social-stats div{padding:18px 20px;border-radius:20px;background:rgba(255,255,255,.05);border:1px solid var(--nightline)}
+.social-stats b{display:block;font:700 clamp(28px,3vw,42px)/1 var(--fd);letter-spacing:-.05em;background:linear-gradient(115deg,#C6B5FF,#9FC0FF);-webkit-background-clip:text;background-clip:text;color:transparent}
+.social-stats span{display:block;margin-top:6px;font-size:14px;font-weight:600;color:#B9B2E3}
+.cases{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.case{display:flex;flex-direction:column;gap:16px;padding:18px;border-radius:28px;background:linear-gradient(160deg,#211C47,#15112F);border:1px solid var(--nightline)}
+.case.wide{grid-column:1/-1}
+.case-head{display:flex;align-items:center;gap:12px}
+.case-av{flex:none;width:48px;height:48px;border-radius:50%;padding:2px;background:conic-gradient(#C6B5FF,#9FB8FF,#E7DCFF,#C6B5FF)}
+.case-av span{width:100%;height:100%;border-radius:50%;display:grid;place-items:center;background:#1A1638;font:700 16px var(--fd);color:#fff;overflow:hidden}
+.case-av img{width:100%;height:100%;object-fit:cover}
+.case-id{min-width:0;flex:1}
+.case-id b{display:block;font:600 17px/1.2 var(--fd);letter-spacing:-.02em;color:#fff}
+.case-id small{display:block;color:#A9A2D6;font-size:13px;font-weight:600}
+.case-badge{flex:none;font-size:12px;font-weight:700;padding:6px 12px;border-radius:999px;background:rgba(198,181,255,.16);color:var(--moon);white-space:nowrap}
+.case-badge.live{background:linear-gradient(115deg,#C6B5FF,#9FC0FF);color:var(--ink)}
+.tiles{display:grid;grid-template-columns:repeat(var(--n,2),minmax(0,1fr));gap:8px}
+.tile{position:relative;padding:0;border:0;border-radius:14px;overflow:hidden;background:#0E0B22;aspect-ratio:var(--ar,1);cursor:pointer}
+.tile img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease)}
+.tile:hover img{transform:scale(1.06)}
+.tile .pl{position:absolute;right:8px;top:8px;width:30px;height:30px;border-radius:50%;background:rgba(255,255,255,.85)}
+.tile .pl::after{content:"";position:absolute;left:12px;top:9px;border-left:9px solid var(--ink);border-top:6px solid transparent;border-bottom:6px solid transparent}
+.case-body{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px 18px;align-items:start}
+.case-body p{margin:0;color:#C9C3EC;font-size:15px;grid-column:1/-1}
+.case-sector{font-weight:700;color:var(--lilac);font-size:14px}
+.case-craft{font-size:12px;font-weight:700;padding:5px 10px;border-radius:999px;border:1px solid rgba(198,181,255,.35);color:var(--moon);white-space:nowrap}
+.case .tags span{background:rgba(198,181,255,.14);color:var(--moon)}
+.case-foot{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between}
+.case-foot a{font-weight:700;font-size:14px;color:var(--sky)}
+.case-foot small{color:#A9A2D6;font-size:13px}
+.lightbox img{width:auto;max-width:100%;max-height:80vh;margin:0 auto;border-radius:20px}
+@media (max-width:900px){.cases{grid-template-columns:minmax(0,1fr)}.social-stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:600px){.case.wide .tiles{--n:3!important}.case-body{grid-template-columns:minmax(0,1fr)}}
+.page.page-night{background:radial-gradient(70% 40% at 80% 0%,rgba(169,147,255,.22),transparent 70%),radial-gradient(60% 30% at 0% 45%,rgba(159,184,255,.16),transparent 70%),var(--night);color:var(--moon)}
+.page-night .h3{color:#fff}

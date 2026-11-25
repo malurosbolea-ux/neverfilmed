@@ -7,9 +7,8 @@
 <meta name="description" content="Neverfilmed is an AI-native creative studio: AI commercials, websites, apps, social media, reels, banners and product photography.">
 <meta name="theme-color" content="#F3F0FF">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23B49CFF'/%3E%3Cstop offset='1' stop-color='%238FB0FF'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect x='2' y='5' width='28' height='22' rx='6' fill='%231A1540'/%3E%3Cpath d='M16 9l1.8 5.2L23 16l-5.2 1.8L16 23l-1.8-5.2L9 16l5.2-1.8z' fill='url(%23g)'/%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
+<link rel="preload" href="fonts/unbounded-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/unbounded-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="on-home intro-on">
@@ -139,6 +138,7 @@
 
   <nav class="subnav" aria-label="Work">
     <button type="button" data-go="commercials" data-es="Anuncios">Commercials</button>
+    <button type="button" data-go="social" data-es="Redes sociales">Social media</button>
     <button type="button" data-go="websites" data-es="Webs">Websites</button>
     <button type="button" data-go="apps">Apps</button>
     <button type="button" data-go="gallery" data-es="Foto y banners">Photo &amp; banners</button>
@@ -161,6 +161,20 @@
         <ol class="cine-list" id="cineList"></ol>
       </div>
     </div>
+  </div>
+
+  <div class="social band" id="social" data-unlock="social" data-en-label="Social media" data-es-label="Redes sociales">
+    <div class="sub-head">
+      <h2 class="h3" data-es="Redes sociales">Social media</h2>
+      <p data-es="Llevamos cuentas de principio a fin: estrategia, diseño, contenido y comunidad. Toca cualquier publicación o reel para verlo en grande.">We run accounts end to end: strategy, design, content and community. Tap any post or reel to see it full size.</p>
+    </div>
+    <div class="social-stats">
+      <div><b>10K+</b><span data-es="comunidad de Élan que llevamos hoy">Élan community we run today</span></div>
+      <div><b>20K+</b><span data-es="seguidores en el perfil de creadora de la fundadora">followers on our founder's creator profile</span></div>
+      <div><b>6</b><span data-es="marcas con estrategia y contenido">brands with strategy and content</span></div>
+      <div><b>3</b><span data-es="plataformas: Instagram, TikTok y LinkedIn">platforms: Instagram, TikTok and LinkedIn</span></div>
+    </div>
+    <div class="cases" id="cases"></div>
   </div>
 
   <div class="websites band" id="websites" data-unlock="websites" data-en-label="Websites" data-es-label="Webs">
@@ -350,6 +364,7 @@
 <div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Video" data-lenis-prevent>
   <div class="lightbox-inner">
     <video id="lbVideo" controls playsinline></video>
+    <img id="lbImg" alt="" hidden>
     <div class="lightbox-bar">
       <span id="lbTitle"></span>
       <a id="lbHD" href="#" target="_blank" rel="noopener" data-es="Ver en HD en Drive ↗">Watch in HD on Drive ↗</a>

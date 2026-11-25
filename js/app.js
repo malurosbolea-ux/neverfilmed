@@ -75,35 +75,35 @@ const IC = {
 };
 
 const SERVICES = [
-  { ic: 'film', media: { v: 'media/ads/petal.mp4', p: 'media/posters/petal.webp' }, chip: { en: 'AI commercial', es: 'Anuncio con IA' },
+  { ic: 'film', go: 'commercials', go_l: { en: 'See the commercials', es: 'Ver los anuncios' }, media: { v: 'media/ads/petal.mp4', p: 'media/posters/petal.webp' }, chip: { en: 'AI commercial', es: 'Anuncio con IA' },
     t: { en: 'AI commercials & brand films', es: 'Anuncios con IA y películas de marca' },
     d: { en: 'TV and online spots with consistent characters, exact products and cinematic light. No shoot, no crew.', es: 'Spots para televisión y online con personajes coherentes, el producto exacto y luz de cine. Sin rodaje ni equipo.' },
     tags: [{ en: 'Product launches', es: 'Lanzamientos' }, { en: 'Brand films', es: 'Películas de marca' }, '16:9 · 9:16 · 1:1', { en: 'Music & voice-over', es: 'Música y locución' }] },
-  { ic: 'web', media: { i: 'media/shots/tech-d-3.webp' }, chip: { en: 'Website', es: 'Web' },
+  { ic: 'web', go: 'websites', go_l: { en: 'See the websites', es: 'Ver las webs' }, media: { i: 'media/shots/tech-d-3.webp' }, chip: { en: 'Website', es: 'Web' },
     t: { en: 'Websites', es: 'Páginas web' },
     d: { en: 'Landing pages, e-commerce and brand sites with 3D, scroll storytelling and bilingual copy, coded from scratch.', es: 'Landings, e-commerce y webs de marca con 3D, storytelling con scroll y textos bilingües, programadas desde cero.' },
     tags: [{ en: 'E-commerce', es: 'E-commerce' }, { en: '3D & motion', es: '3D y animación' }, { en: 'SEO-ready', es: 'Preparadas para SEO' }, 'EN / ES'] },
-  { ic: 'app', media: { i: 'media/shots/matcha-m-1.webp', pos: '50% 30%' }, chip: { en: 'App', es: 'App' },
+  { ic: 'app', go: 'apps', go_l: { en: 'See the apps', es: 'Ver las apps' }, media: { i: 'media/shots/matcha-m-1.webp', pos: '50% 30%' }, chip: { en: 'App', es: 'App' },
     t: { en: 'Apps', es: 'Apps' },
     d: { en: 'Your website turned into an iPhone and Android app, with native navigation, ordering, bookings and push.', es: 'Tu web convertida en app para iPhone y Android, con navegación nativa, pedidos, reservas y notificaciones.' },
     tags: ['iOS & Android', { en: 'Ordering & bookings', es: 'Pedidos y reservas' }, { en: 'From your website', es: 'Desde tu web' }] },
-  { ic: 'social', media: { i: 'media/stills/girl.webp', pos: '50% 35%' }, chip: { en: 'Social media', es: 'Redes sociales' },
+  { ic: 'social', go: 'social', go_l: { en: 'See our social media work', es: 'Ver nuestras redes' }, media: { i: 'media/stills/girl.webp', pos: '50% 35%' }, chip: { en: 'Social media', es: 'Redes sociales' },
     t: { en: 'Social media management', es: 'Gestión de redes sociales' },
     d: { en: 'We run your accounts: strategy, content calendar, posting, community management and monthly reports. We have grown accounts of up to 20K followers.', es: 'Llevamos tus redes: estrategia, calendario, publicación, community management e informes mensuales. Hemos llevado cuentas de hasta 20K seguidores.' },
     tags: ['Instagram', 'TikTok', 'LinkedIn', { en: 'Community management', es: 'Community management' }, { en: 'Monthly reports', es: 'Informes mensuales' }] },
-  { ic: 'reel', media: { v: 'media/ads/morning.mp4', p: 'media/posters/morning.webp' }, chip: { en: 'Reels & content', es: 'Reels y contenido' },
+  { ic: 'reel', go: 'social', go_l: { en: 'See the reels', es: 'Ver los reels' }, media: { v: 'media/ads/morning.mp4', p: 'media/posters/morning.webp' }, chip: { en: 'Reels & content', es: 'Reels y contenido' },
     t: { en: 'Reels & social content', es: 'Reels y contenido para redes' },
     d: { en: 'Reels, TikToks, carousels and UGC-style ads designed to stop the scroll and get saved.', es: 'Reels, TikToks, carruseles y anuncios estilo UGC pensados para frenar el scroll y que los guarden.' },
     tags: ['Reels', 'TikTok', { en: 'Carousels', es: 'Carruseles' }, { en: 'UGC-style ads', es: 'Anuncios estilo UGC' }] },
-  { ic: 'banner', media: { i: 'media/stills/banner-burger.webp' }, chip: { en: 'Banners', es: 'Banners' },
+  { ic: 'banner', go: 'gallery', go_l: { en: 'See the banners', es: 'Ver los banners' }, media: { i: 'media/stills/banner-burger.webp' }, chip: { en: 'Banners', es: 'Banners' },
     t: { en: 'Banners & display ads', es: 'Banners y anuncios display' },
     d: { en: 'Campaign sets for Meta, Google and out-of-home, with variants ready for A/B testing.', es: 'Packs de campaña para Meta, Google y exterior, con variantes listas para test A/B.' },
     tags: ['Meta Ads', 'Google Display', { en: 'Out-of-home', es: 'Exterior' }, { en: 'A/B variants', es: 'Variantes A/B' }] },
-  { ic: 'photo', media: { i: 'media/stills/model-jewellery.webp', pos: '50% 30%' }, chip: { en: 'Product photos', es: 'Fotos de producto' },
+  { ic: 'photo', go: 'gallery', go_l: { en: 'See the photography', es: 'Ver la fotografía' }, media: { i: 'media/stills/model-jewellery.webp', pos: '50% 30%' }, chip: { en: 'Product photos', es: 'Fotos de producto' },
     t: { en: 'Product photography & brand worlds', es: 'Foto de producto y mundos de marca' },
     d: { en: 'Packshots, lifestyle, packaging and characters that stay the same across a whole campaign.', es: 'Packshots, lifestyle, packaging y personajes que se mantienen iguales durante toda la campaña.' },
     tags: ['Packshots', 'Lifestyle', 'Packaging', { en: 'Moodboards', es: 'Moodboards' }] },
-  { ic: 'growth', media: { i: 'media/shots/tech-d-5.webp' }, chip: { en: 'Ads & SEO', es: 'Campañas y SEO' },
+  { ic: 'growth', go: 'contact', go_l: { en: 'Ask for an audit', es: 'Pedir una auditoría' }, media: { i: 'media/shots/tech-d-5.webp' }, chip: { en: 'Ads & SEO', es: 'Campañas y SEO' },
     t: { en: 'Campaigns & growth', es: 'Campañas y crecimiento' },
     d: { en: 'SEO and SEM audits, Meta and Google Ads, analytics and dashboards so the beautiful stuff also sells.', es: 'Auditorías SEO y SEM, Meta y Google Ads, analítica y dashboards para que lo bonito también venda.' },
     tags: [{ en: 'SEO & SEM audits', es: 'Auditorías SEO y SEM' }, 'Meta & Google Ads', { en: 'Dashboards', es: 'Dashboards' }] }
@@ -206,8 +206,9 @@ function renderServices() {
     const m = s.media.v
       ? `<video muted loop playsinline preload="none" poster="${s.media.p}" data-src="${s.media.v}"></video>`
       : `<img src="${s.media.i}" alt="" loading="lazy" style="object-position:${s.media.pos || '50% 0'}">`;
-    return `<article class="svc"><span class="svc-ic">${IC[s.ic]}</span><div class="svc-media">${m}</div>
-      ${t2(s.t, 'h3')}${t2(s.d, 'p')}<div class="tags">${s.tags.map(x => t2(x)).join('')}</div></article>`;
+    return `<article class="svc" data-go="${s.go}"><span class="svc-ic">${IC[s.ic]}</span><div class="svc-media">${m}</div>
+      ${t2(s.t, 'h3')}${t2(s.d, 'p')}<div class="tags">${s.tags.map(x => t2(x)).join('')}</div>
+      <a class="svc-link" href="#${s.go}">${t2(s.go_l)} →</a></article>`;
   }).join('');
 }
 
@@ -276,13 +277,82 @@ function renderChips() {
   $$('#fServices .chip').forEach(c => c.addEventListener('click', () => c.setAttribute('aria-pressed', c.getAttribute('aria-pressed') !== 'true')));
 }
 
+
+const CASES = [
+  { id: 'elan', wide: true, name: 'Instituto Élan de Sexología', handle: '@elansexologia', av: 'É', url: 'https://www.instagram.com/elansexologia/',
+    badge: { en: 'Current client · live', es: 'Cliente actual · en directo' }, live: true,
+    sector: { en: 'Health · sexology & couples therapy · 10K+ followers', es: 'Salud · sexología y terapia de pareja · +10K seguidores' },
+    craft: { en: '100% graphic design, no AI', es: '100 % diseño gráfico, sin IA' },
+    d: { en: 'We run the whole account: strategy, educational carousels and short videos on intimacy and relationships, with sensitive, science-based messaging.', es: 'Llevamos la cuenta entera: estrategia, carruseles divulgativos y vídeos cortos sobre intimidad y pareja, con un mensaje delicado y basado en la ciencia.' },
+    did: [{ en: 'Strategy', es: 'Estrategia' }, { en: 'Carousels', es: 'Carruseles' }, 'Reels', { en: 'Community management', es: 'Community management' }],
+    ar: '4/5', n: 6, tiles: [{ v: 'elan-r1' }, { i: 'elan-1' }, { i: 'elan-2' }, { v: 'elan-r2' }, { i: 'elan-3' }, { i: 'elan-4' }],
+    link: { en: 'Open the profile ↗', es: 'Abrir el perfil ↗' } },
+  { id: 'conf', name: { en: 'Confidential project', es: 'Proyecto confidencial' }, handle: 'NDA', av: '✦',
+    badge: { en: 'Under NDA', es: 'Bajo NDA' }, sector: { en: 'AI reels for a client', es: 'Reels con IA para un cliente' },
+    craft: { en: 'Generative AI', es: 'IA generativa' },
+    d: { en: 'Vertical AI reels from concept stills to finished video, with one consistent art direction. Made together with marketer Irene Puche.', es: 'Reels verticales con IA, de las imágenes de concepto al vídeo final, con una dirección de arte coherente. Hechos junto a la especialista en marketing Irene Puche.' },
+    did: [{ en: 'AI video', es: 'Vídeo con IA' }, { en: 'Art direction', es: 'Dirección de arte' }, 'Reels'],
+    ar: '9/16', n: 4, tiles: [{ v: 'conf-1' }, { v: 'conf-2' }, { v: 'conf-3' }, { v: 'conf-4' }],
+    credit: { url: 'https://irenepuche.com', t: 'irenepuche.com ↗' } },
+  { id: 'yuuju', name: 'Yuuju', handle: { en: 'Home fibre', es: 'Fibra para el hogar' }, av: 'Y',
+    badge: { en: 'Campaign', es: 'Campaña' }, sector: { en: 'Telecoms · home fibre installation', es: 'Telecomunicaciones · instalación de fibra' },
+    craft: { en: 'Graphic design & motion', es: 'Diseño gráfico y motion' },
+    d: { en: 'A social campaign told through animated storytelling: data, reasons to choose them and a looping motion piece.', es: 'Una campaña en redes contada con storytelling animado: datos, motivos para elegirles y una pieza en movimiento en bucle.' },
+    did: [{ en: 'Campaign', es: 'Campaña' }, 'Motion', { en: 'Carousels', es: 'Carruseles' }],
+    ar: '1/1', n: 2, tiles: [{ v: 'yuuju-v', loop: true }, { i: 'yuuju-1' }, { i: 'yuuju-2' }, { i: 'yuuju-3' }] },
+  { id: 'zerain', name: 'Zerain Restaurant', handle: { en: 'Basque cuisine · Madrid', es: 'Cocina vasca · Madrid' }, av: 'Z',
+    badge: { en: 'Full campaign', es: 'Campaña completa' }, sector: { en: 'Food & beverage', es: 'Restauración' },
+    craft: { en: '100% graphic design, no AI', es: '100 % diseño gráfico, sin IA' },
+    d: { en: 'A full social campaign for a Basque restaurant: strategy, visual line and posts built around the flavours of the north.', es: 'Una campaña completa en redes para un restaurante vasco: estrategia, línea visual y publicaciones en torno al sabor del norte.' },
+    did: [{ en: 'Strategy', es: 'Estrategia' }, { en: 'Visual identity', es: 'Línea visual' }, 'Posts'],
+    ar: '1/1', n: 2, tiles: [{ i: 'zerain-1' }, { i: 'zerain-2' }, { i: 'zerain-3' }, { i: 'zerain-4' }] },
+  { id: 'jaro', name: 'Clínica Jaro', handle: { en: 'Wellness & acupuncture', es: 'Bienestar y acupuntura' }, av: 'J',
+    badge: { en: 'Promotion', es: 'Promoción' }, sector: { en: 'Health & wellness', es: 'Salud y bienestar' },
+    craft: { en: '100% graphic design, no AI', es: '100 % diseño gráfico, sin IA' },
+    d: { en: 'Educational posts and promotion for a wellness clinic: women’s health, fertility and nutrition, in a soft, trustworthy style.', es: 'Publicaciones divulgativas y promoción para una clínica de bienestar: salud femenina, fertilidad y nutrición, con un estilo suave y de confianza.' },
+    did: [{ en: 'Educational posts', es: 'Posts divulgativos' }, { en: 'Promotion', es: 'Promoción' }],
+    ar: '1/1', n: 2, tiles: [{ i: 'jaro-1' }, { i: 'jaro-2' }, { i: 'jaro-3' }, { i: 'jaro-4' }] },
+  { id: 'sample', name: 'MRB Sample', handle: { en: 'International architecture group', es: 'Grupo internacional de arquitectura' }, av: 'M',
+    badge: { en: 'Under NDA', es: 'Bajo NDA' }, sector: { en: 'Architecture · branding & editorial', es: 'Arquitectura · branding y editorial' },
+    craft: { en: '100% graphic design, no AI', es: '100 % diseño gráfico, sin IA' },
+    d: { en: 'Branding and editorial content for an architecture group. The client’s name stays private, so the work is signed under our placeholder brand.', es: 'Branding y contenido editorial para un grupo de arquitectura. El nombre del cliente es privado, así que el trabajo va firmado con nuestra marca de ejemplo.' },
+    did: ['Branding', { en: 'Editorial design', es: 'Diseño editorial' }, 'LinkedIn'],
+    ar: '4/5', n: 2, tiles: [{ i: 'sample-1' }, { i: 'sample-2' }, { i: 'sample-3' }, { i: 'sample-4' }] },
+  { id: 'creator', wide: true, name: 'Malu', handle: '@malu_menolu', avImg: 'media/founder.webp', url: 'https://www.instagram.com/malu_menolu/',
+    badge: { en: 'Founder · creator', es: 'Fundadora · creadora' }, live: true,
+    sector: { en: 'Content creator & model · 20K+ followers', es: 'Creadora de contenido y modelo · +20K seguidores' },
+    craft: { en: 'Influencer marketing', es: 'Marketing de influencers' },
+    d: { en: 'Our founder collaborates with brands from her own profile and has worked as a commercial, advertising and editorial model, so we know influencer marketing from both sides of the camera.', es: 'Nuestra fundadora colabora con marcas desde su propio perfil y ha trabajado como modelo comercial, publicitaria y editorial, así que conocemos el marketing de influencers desde los dos lados de la cámara.' },
+    did: [{ en: 'Brand collaborations', es: 'Colaboraciones con marcas' }, 'UGC', { en: 'On-camera talent', es: 'Delante de la cámara' }],
+    link: { en: 'Open the profile ↗', es: 'Abrir el perfil ↗' } }
+];
+function renderCases() {
+  $('#cases').innerHTML = CASES.map(c => {
+    const nm = typeof c.name === 'string' ? `<b>${esc(c.name)}</b>` : t2(c.name, 'b');
+    const hd = typeof c.handle === 'string' ? `<small>${esc(c.handle)}</small>` : t2(c.handle, 'small');
+    const av = c.avImg ? `<img src="${c.avImg}" alt="">` : esc(c.av);
+    const tiles = c.tiles ? `<div class="tiles" style="--n:${c.n};--ar:${c.ar}">${c.tiles.map(t => {
+      const src = t.v ? `media/social/${t.v}.webp` : `media/social/${t.i}.webp`;
+      return `<button type="button" class="tile" data-cursor="${t.v ? 'Play' : 'Open'}" data-media="${t.v ? 'v' : 'i'}" data-src="media/social/${t.v || t.i}.${t.v ? 'mp4' : 'webp'}" data-title="${esc(typeof c.name === 'string' ? c.name : c.name.en)}">
+        <img src="${src}" alt="" loading="lazy">${t.v ? '<span class="pl" aria-hidden="true"></span>' : ''}</button>`;
+    }).join('')}</div>` : '';
+    const foot = c.url ? `<a href="${c.url}" target="_blank" rel="noopener">${t2(c.link)}</a>` : c.credit ? `<small>${t2({ en: 'Created with Irene Puche', es: 'Hecho con Irene Puche' })} · <a href="${c.credit.url}" target="_blank" rel="noopener">${esc(c.credit.t)}</a></small>` : '';
+    return `<article class="case${c.wide ? ' wide' : ''}" data-case="${c.id}">
+      <div class="case-head"><span class="case-av"><span>${av}</span></span><span class="case-id">${nm}${hd}</span>${t2(c.badge, 'span', 'case-badge' + (c.live ? ' live' : ''))}</div>
+      ${tiles}
+      <div class="case-body">${t2(c.sector, 'span', 'case-sector')}${t2(c.craft, 'span', 'case-craft')}${t2(c.d, 'p')}</div>
+      <div class="case-foot"><div class="tags">${c.did.map(x => t2(x)).join('')}</div>${foot}</div>
+    </article>`;
+  }).join('');
+}
+
 const PAGES = {
   home: { n: 0, en: 'Home', es: 'Inicio' }, work: { n: 1, en: 'Work', es: 'Trabajos' }, services: { n: 2, en: 'Services', es: 'Servicios' },
   studio: { n: 3, en: 'Studio', es: 'Estudio' }, pricing: { n: 4, en: 'Pricing', es: 'Precios' }, contact: { n: 5, en: 'Contact', es: 'Contacto' }
 };
-const SUB = { commercials: 'work', websites: 'work', apps: 'work', gallery: 'work', process: 'services', faq: 'studio' };
+const SUB = { social: 'work', commercials: 'work', websites: 'work', apps: 'work', gallery: 'work', process: 'services', faq: 'studio' };
 const LEVELS = [
-  { p: 'work', media: { v: 'media/ads/titanium.mp4', p: 'media/posters/titanium.webp' }, d: { en: '7 AI commercials, 4 live websites, apps, photography and banners.', es: '7 anuncios con IA, 4 webs en directo, apps, foto y banners.' } },
+  { p: 'work', media: { v: 'media/ads/titanium.mp4', p: 'media/posters/titanium.webp' }, d: { en: '7 AI commercials, social media for 7 accounts, 4 live websites, apps, photography and banners.', es: '7 anuncios con IA, redes de 7 cuentas, 4 webs en directo, apps, foto y banners.' } },
   { p: 'services', media: { v: 'media/ads/morning.mp4', p: 'media/posters/morning.webp' }, d: { en: 'Commercials, web, apps, social media, reels, banners, photography and ads.', es: 'Anuncios, webs, apps, redes sociales, reels, banners, foto y campañas.' } },
   { p: 'studio', media: { i: 'media/founder.webp', pos: '50% 22%' }, d: { en: 'Who we are, how we think and the FAQ.', es: 'Quiénes somos, cómo pensamos y las preguntas frecuentes.' } },
   { p: 'pricing', pastel: true, d: { en: 'Negotiable plans built around your budget.', es: 'Planes negociables a medida de tu presupuesto.' } },
@@ -302,7 +372,7 @@ function renderLevels() {
   }).join('');
 }
 
-renderTools(); renderServices(); renderCine(); renderSites(); renderPhones(); renderGallery(); renderSteps(); renderPlans(); renderFaq(); renderChips(); renderLevels();
+renderTools(); renderServices(); renderCine(); renderSites(); renderPhones(); renderGallery(); renderSteps(); renderPlans(); renderFaq(); renderChips(); renderLevels(); renderCases();
 
 const audio = createAudio();
 const G = window.gsap, ST = window.ScrollTrigger;
@@ -324,6 +394,22 @@ function paintManifesto(p) {
 function splitTitles() {
   $$('.phead-title').forEach(h => { h.innerHTML = h.textContent.split('').map(c => `<span class="ch">${esc(c)}</span>`).join(''); });
 }
+function fitBig() {
+  $$('.phead-title,.footer-word').forEach(el => {
+    if (!el.offsetWidth) return;
+    el.style.fontSize = '';
+    const avail = el.clientWidth - (el.classList.contains('footer-word') ? 24 : 4);
+    const w = el.scrollWidth;
+    if (w > avail) el.style.fontSize = (parseFloat(getComputedStyle(el).fontSize) * avail / w * 0.985) + 'px';
+  });
+}
+function fitWarp() {
+  const el = $('#warpName'); el.style.fontSize = '';
+  const avail = innerWidth * 0.9, w = el.scrollWidth;
+  if (w > avail) el.style.fontSize = (parseFloat(getComputedStyle(el).fontSize) * avail / w) + 'px';
+}
+addEventListener('resize', () => { fitBig(); });
+if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => { fitBig(); ST && ST.refresh(); });
 function applyLang(l) {
   lang = l;
   document.documentElement.lang = l;
@@ -336,7 +422,7 @@ function applyLang(l) {
   $$('[data-esp]').forEach(el => { if (el.dataset.enp === undefined) el.dataset.enp = el.placeholder; el.placeholder = l === 'es' ? el.dataset.esp : el.dataset.enp; });
   $$('[data-esa]').forEach(el => { if (el.dataset.ena === undefined) el.dataset.ena = el.alt; el.alt = l === 'es' ? el.dataset.esa : el.dataset.ena; });
   $$('.lang-btn').forEach(b => { const on = b.dataset.lang === l; b.classList.toggle('is-on', on); b.setAttribute('aria-pressed', on); });
-  splitManifesto(); splitTitles(); paintLevelStates();
+  splitManifesto(); splitTitles(); paintLevelStates(); fitBig();
   if (cur >= 0) showInfo(cur);
   renderQuick(); updateHud();
   if (page && G && ST) { if (pageCtx) pageCtx.revert(); pageCtx = G.context(() => initPage(page, true), $('#page-' + page)); }
@@ -378,19 +464,30 @@ new IntersectionObserver(es => {
 }, { threshold: 0.25 }).observe(screen);
 showAd(0, false);
 
-const lb = $('#lightbox'), lbv = $('#lbVideo');
+const lb = $('#lightbox'), lbv = $('#lbVideo'), lbi = $('#lbImg');
 let musicWasOn = false;
 function openLB(i) {
   const a = ADS[i];
   vid.pause();
   musicWasOn = audio.on; if (musicWasOn) audio.stop();
+  lbi.hidden = true; lbv.hidden = false; $('#lbHD').hidden = false;
   lbv.src = `media/ads/${a.id}.mp4`; lbv.poster = `media/posters/${a.id}.webp`;
   $('#lbTitle').textContent = a.title; $('#lbHD').href = a.hd;
   lb.hidden = false; lenis && lenis.stop();
   lbv.play().catch(() => {});
   $('#lbClose').focus();
 }
+function openMedia(kind, src, title) {
+  vid.pause();
+  musicWasOn = audio.on; if (musicWasOn && kind === 'v') audio.stop(); else musicWasOn = false;
+  $('#lbHD').hidden = true; $('#lbTitle').textContent = title;
+  if (kind === 'v') { lbi.hidden = true; lbv.hidden = false; lbv.poster = src.replace('.mp4', '.webp'); lbv.src = src; lbv.play().catch(() => {}); }
+  else { lbv.pause(); lbv.hidden = true; lbi.hidden = false; lbi.src = src; }
+  lb.hidden = false; lenis && lenis.stop(); $('#lbClose').focus();
+}
+$('#cases').addEventListener('click', e => { const t = e.target.closest('.tile'); if (!t) return; audio.click(); openMedia(t.dataset.media, t.dataset.src, t.dataset.title); });
 function closeLB() {
+  lbi.hidden = true; lbi.removeAttribute('src');
   lbv.pause(); lbv.removeAttribute('src'); lbv.load(); lb.hidden = true; lenis && lenis.start();
   if (musicWasOn) { audio.start(); syncSound(); }
   if (cineVisible) vid.play().catch(() => {});
@@ -490,7 +587,7 @@ if (fine && !reduce) {
   })();
   document.addEventListener('pointerover', e => {
     const c = e.target.closest('[data-cursor]');
-    if (c) { const l = c.dataset.cursor; setCursor(lang === 'es' ? ({ Play: 'Ver', Visit: 'Entrar', Enter: 'Entrar' }[l] || l) : l, 'big'); audio.tick(); return; }
+    if (c) { const l = c.dataset.cursor; setCursor(lang === 'es' ? ({ Play: 'Ver', Visit: 'Entrar', Enter: 'Entrar', Open: 'Abrir' }[l] || l) : l, 'big'); audio.tick(); return; }
     const a = e.target.closest('a,button,select,input,textarea,label');
     if (a) { setCursor('', 'link'); if (a.matches('a,button')) audio.tick(); }
   });
@@ -585,6 +682,7 @@ function showPage(name) {
   if (lenis) lenis.scrollTo(0, { immediate: true, force: true }); else scrollTo(0, 0);
   window.scrollTo(0, 0);
   if (location.hash.replace('#', '') !== name) { ignoreHash = true; location.hash = name; }
+  fitBig();
   if (pageCtx) pageCtx.revert();
   if (G && ST) { pageCtx = G.context(() => initPage(name), $('#page-' + name)); ST.refresh(); }
   else initPage(name);
@@ -600,7 +698,7 @@ function go(name, { sub = null, instant = false } = {}) {
   if (instant || reduce || !G) { showPage(name); if (sub) setTimeout(() => scrollToEl(document.getElementById(sub)), 300); return Promise.resolve(); }
   busy = true;
   const pg = PAGES[name];
-  $('#warpLvl').textContent = T(LVL(pg.n)); $('#warpName').textContent = T(pg);
+  $('#warpLvl').textContent = T(LVL(pg.n)); $('#warpName').textContent = T(pg); fitWarp();
   return new Promise(res => {
     const tl = G.timeline({ onComplete: () => { busy = false; G.set('.warp', { visibility: 'hidden' }); res(); } });
     tl.set('.warp', { visibility: 'visible' })
@@ -621,6 +719,11 @@ document.addEventListener('click', e => {
   if (a.dataset.plan) pickPlan(a.dataset.plan);
   const [p, s] = a.dataset.page ? [a.dataset.page, null] : parseHash(h);
   go(p, { sub: s });
+});
+$('#servicesTrack').addEventListener('click', e => {
+  if (e.target.closest('a')) return;
+  const c = e.target.closest('.svc'); if (!c) return;
+  audio.click(); const [p, s2] = parseHash('#' + c.dataset.go); go(p, { sub: s2 });
 });
 $$('.subnav button').forEach(b => b.addEventListener('click', () => { audio.click(); scrollToEl(document.getElementById(b.dataset.go)); }));
 
@@ -664,7 +767,7 @@ function initPage(name, again = false) {
   if (name === 'work') {
     G.fromTo('#cineScreen', { scale: 0.82, borderRadius: 70 }, { scale: 1, borderRadius: 26, ease: 'none', scrollTrigger: { trigger: '#commercials', start: 'top 95%', end: 'top 25%', scrub: true } });
     G.from('#cineList li', { x: 60, opacity: 0, stagger: 0.07, duration: 0.8, ease: 'power3.out', scrollTrigger: { trigger: '#cineList', start: 'top 85%', once: true } });
-    ['commercials', 'websites', 'apps', 'gallery'].forEach(id => ST.create({ trigger: '#' + id, start: 'top 50%', end: 'bottom 50%', onToggle: s => { if (s.isActive) $$('.subnav button').forEach(b => b.classList.toggle('on', b.dataset.go === id)); } }));
+    ['commercials', 'social', 'websites', 'apps', 'gallery'].forEach(id => ST.create({ trigger: '#' + id, start: 'top 50%', end: 'bottom 50%', onToggle: s => { if (s.isActive) $$('.subnav button').forEach(b => b.classList.toggle('on', b.dataset.go === id)); } }));
     const tilt = [-26, -10, 10, 26];
     $$('.phone-wrap').forEach((p, i) => G.fromTo(p, { rotateY: tilt[i % 4], rotateX: 22, y: [140, 50, 90, 180][i % 4], opacity: 0.3 }, { rotateY: 0, rotateX: 0, y: 0, opacity: 1, ease: 'none', scrollTrigger: { trigger: '#phones', start: 'top 95%', end: 'center 55%', scrub: true } }));
     const mm = G.matchMedia();
@@ -739,7 +842,7 @@ const A = {
   price: { en: 'Our prices are negotiable: every project is quoted around your budget. Brands usually start with one piece (Spark), launch with a full pack (Launch) or keep us monthly for social media and ads (Always-on). Tell me roughly what you want to invest. <a href="#pricing">See the plans</a>', es: 'Nuestros precios son negociables: cada proyecto se presupuesta a partir de lo que quieras invertir. Normalmente las marcas empiezan con una pieza (Spark), lanzan con un pack completo (Launch) o nos tienen cada mes para redes y anuncios (Always-on). Dime más o menos cuánto quieres invertir. <a href="#pricing">Ver los planes</a>' },
   time: { en: 'It depends on the scope, and we confirm a calendar in every proposal. You get a first visual concept quickly, and urgent launches are possible.', es: 'Depende del alcance, y confirmamos un calendario en cada propuesta. Recibes un primer concepto visual enseguida y podemos asumir lanzamientos urgentes.' },
   tools: { en: 'We direct Higgsfield, Seedance 2.5, Kling 3.0, Veo 3, Nano Banana Pro, Magnific, Omni 1.2, Google Flow and Canva AI for images and video, and build websites with Three.js and GSAP.', es: 'Dirigimos Higgsfield, Seedance 2.5, Kling 3.0, Veo 3, Nano Banana Pro, Magnific, Omni 1.2, Google Flow y Canva AI para imagen y vídeo, y programamos las webs con Three.js y GSAP.' },
-  social: { en: 'Yes, we manage social media: strategy, content calendar, posting, community management and a monthly report on Instagram, TikTok and LinkedIn. We create all the content too, from reels to carousels. <a href="#services">See services</a>', es: 'Sí, llevamos redes sociales: estrategia, calendario, publicación, community management e informe mensual en Instagram, TikTok y LinkedIn. Además creamos todo el contenido, de reels a carruseles. <a href="#services">Ver servicios</a>' },
+  social: { en: 'Yes, we manage social media: strategy, content calendar, posting, community management and a monthly report on Instagram, TikTok and LinkedIn. We create all the content too, from reels to carousels. <a href="#social">See our social media work</a>', es: 'Sí, llevamos redes sociales: estrategia, calendario, publicación, community management e informe mensual en Instagram, TikTok y LinkedIn. Además creamos todo el contenido, de reels a carruseles. <a href="#social">Ver nuestras redes</a>' },
   ads: { en: 'We make AI commercials for TV, web and social: launches, beauty, fashion, tech and jewellery. Seven of them are here: <a href="#commercials">watch the commercials</a>', es: 'Hacemos anuncios con IA para televisión, web y redes: lanzamientos, belleza, moda, tecnología y joyería. Aquí tienes siete: <a href="#commercials">ver los anuncios</a>' },
   web: { en: 'We design and code websites from scratch: e-commerce, hospitality and portfolios, bilingual, with 3D and scroll storytelling. <a href="#websites">See them live</a>', es: 'Diseñamos y programamos webs desde cero: e-commerce, hostelería y portfolios, bilingües, con 3D y storytelling con scroll. <a href="#websites">Verlas en directo</a>' },
   app: { en: 'We turn your website into an iPhone and Android app with the same brand, native navigation, ordering and bookings. <a href="#apps">See the apps</a>', es: 'Convertimos tu web en app para iPhone y Android con la misma marca, navegación nativa, pedidos y reservas. <a href="#apps">Ver las apps</a>' },

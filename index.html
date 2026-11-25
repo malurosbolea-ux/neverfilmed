@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Neverfilmed</title>
+<meta name="description" content="Neverfilmed is an AI-native creative studio: AI commercials, websites, apps, social media, reels, banners and product photography.">
+<meta name="theme-color" content="#F3F0FF">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23B49CFF'/%3E%3Cstop offset='1' stop-color='%238FB0FF'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect x='2' y='5' width='28' height='22' rx='6' fill='%231A1540'/%3E%3Cpath d='M16 9l1.8 5.2L23 16l-5.2 1.8L16 23l-1.8-5.2L9 16l5.2-1.8z' fill='url(%23g)'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="on-home intro-on">
+
+<div class="stage-bg" aria-hidden="true"></div>
+<canvas class="stage" id="stage" aria-hidden="true"></canvas>
+<canvas class="trail" id="trail" aria-hidden="true"></canvas>
+<div class="cursor" id="cursor" aria-hidden="true"><span class="cursor-ring"></span><span class="cursor-dot"></span><span class="cursor-label" id="cursorLabel"></span></div>
+
+<!-- OPENING -->
+<div class="intro" id="intro">
+  <div class="intro-ui" id="introUI">
+    <svg class="intro-mark" viewBox="0 0 40 32" aria-hidden="true"><defs><linearGradient id="im" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#9A80FF"/><stop offset=".55" stop-color="#7FA6FF"/><stop offset="1" stop-color="#C9B8FF"/></linearGradient></defs><rect x="1.5" y="2" width="37" height="28" rx="8" fill="none" stroke="#1A1540" stroke-width="2"/><g fill="#1A1540"><circle cx="9" cy="6.6" r="1.2"/><circle cx="16" cy="6.6" r="1.2"/><circle cx="24" cy="6.6" r="1.2"/><circle cx="31" cy="6.6" r="1.2"/><circle cx="9" cy="25.4" r="1.2"/><circle cx="16" cy="25.4" r="1.2"/><circle cx="24" cy="25.4" r="1.2"/><circle cx="31" cy="25.4" r="1.2"/></g><path d="M20 9.2l1.9 5 5 1.8-5 1.8-1.9 5-1.9-5-5-1.8 5-1.8z" fill="url(#im)"/></svg>
+    <p class="intro-brand">Neverfilmed</p>
+    <div class="intro-load"><span data-es="Cargando fotogramas que nunca se grabaron">Loading frames that were never filmed</span><b><span id="loadNum">0</span>%</b></div>
+    <div class="intro-bar"><i id="loadBar"></i></div>
+    <div class="intro-btns" id="introBtns">
+      <button type="button" class="btn btn-iri btn-lg" id="enterSound"><span class="eq on" aria-hidden="true"><i></i><i></i><i></i></span><span data-es="Entrar con sonido">Enter with sound</span></button>
+      <button type="button" class="btn btn-glass btn-lg" id="enterQuiet" data-es="Entrar en silencio">Enter quietly</button>
+    </div>
+    <p class="intro-hint" data-es="Mejor con cascos · pulsa espacio para empezar">Best with headphones · press space to start</p>
+  </div>
+  <div class="intro-words" aria-hidden="true"><span id="iw1">Never</span><span id="iw2">filmed</span></div>
+  <button type="button" class="intro-skip" id="introSkip" data-es="Saltar intro">Skip intro</button>
+</div>
+<div class="flash" id="flash" aria-hidden="true"></div>
+
+<!-- PAGE WARP -->
+<div class="warp" id="warp" aria-hidden="true"><div class="warp-frame"><span class="warp-lvl" id="warpLvl"></span><span class="warp-name" id="warpName"></span></div></div>
+
+<!-- NAV -->
+<header class="nav" id="nav">
+  <a class="brand" href="#home" data-page="home" aria-label="Neverfilmed home">
+    <svg class="brand-mark" viewBox="0 0 40 32" aria-hidden="true"><defs><linearGradient id="bm" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#B49CFF"/><stop offset=".55" stop-color="#9FC0FF"/><stop offset="1" stop-color="#D9CCFF"/></linearGradient></defs><rect x="1.5" y="2" width="37" height="28" rx="8" fill="none" stroke="currentColor" stroke-width="2.2"/><g fill="currentColor"><circle cx="9" cy="6.6" r="1.3"/><circle cx="16" cy="6.6" r="1.3"/><circle cx="24" cy="6.6" r="1.3"/><circle cx="31" cy="6.6" r="1.3"/><circle cx="9" cy="25.4" r="1.3"/><circle cx="16" cy="25.4" r="1.3"/><circle cx="24" cy="25.4" r="1.3"/><circle cx="31" cy="25.4" r="1.3"/></g><path d="M20 9.2l1.9 5 5 1.8-5 1.8-1.9 5-1.9-5-5-1.8 5-1.8z" fill="url(#bm)"/></svg>
+    <span class="brand-word">Neverfilmed</span>
+  </a>
+  <nav class="nav-links" aria-label="Main">
+    <a href="#work" data-page="work" data-es="Trabajos">Work</a>
+    <a href="#services" data-page="services" data-es="Servicios">Services</a>
+    <a href="#studio" data-page="studio" data-es="Estudio">Studio</a>
+    <a href="#pricing" data-page="pricing" data-es="Precios">Pricing</a>
+    <a href="#contact" data-page="contact" data-es="Contacto">Contact</a>
+  </nav>
+  <div class="nav-right">
+    <button type="button" class="sound" id="soundBtn" aria-pressed="false"><span class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="sound-txt" data-es="Música">Music</span></button>
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" class="lang-btn is-on" data-lang="en" aria-pressed="true">EN</button>
+      <button type="button" class="lang-btn" data-lang="es" aria-pressed="false">ES</button>
+    </div>
+    <a class="btn btn-ink nav-cta" href="#contact" data-page="contact" data-es="Empezar un proyecto">Start a project</a>
+    <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="mobileMenu"><span></span><span></span><span class="sr" data-es="Menú">Menu</span></button>
+  </div>
+</header>
+<div class="mobile-menu" id="mobileMenu" hidden>
+  <a href="#home" data-page="home" data-es="Inicio">Home</a>
+  <a href="#work" data-page="work" data-es="Trabajos">Work</a>
+  <a href="#services" data-page="services" data-es="Servicios">Services</a>
+  <a href="#studio" data-page="studio" data-es="Estudio">Studio</a>
+  <a href="#pricing" data-page="pricing" data-es="Precios">Pricing</a>
+  <a href="#contact" data-page="contact" data-es="Contacto">Contact</a>
+</div>
+
+<!-- HUD -->
+<div class="hud" id="hud" aria-hidden="true">
+  <span class="hud-lvl" id="hudLvl">Level 0</span>
+  <span class="hud-name" id="hudName">Home</span>
+  <span class="hud-bar"><i id="hudFill"></i></span>
+  <span class="hud-found"><svg viewBox="0 0 24 24"><path d="M12 2.5l2.2 6.3 6.3 2.2-6.3 2.2L12 19.5l-2.2-6.3L3.5 11l6.3-2.2z"/></svg><b id="hudFound">0</b>/<b id="hudTotal">0</b></span>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<main id="main">
+
+<!-- ================= HOME ================= -->
+<section class="page" data-page="home" id="page-home">
+  <section class="hero" id="hero">
+    <div class="hero-inner">
+      <p class="hero-kicker"><span class="dot"></span><span data-es="Estudio creativo nativo en IA · Murcia, Madrid y online">AI-native creative studio · Murcia, Madrid &amp; online</span></p>
+      <h1 class="hero-title" data-esh="Anuncios que <em>nunca</em> se grabaron.">Ads that were <em>never</em> filmed.</h1>
+      <div class="hero-bottom">
+        <p class="hero-sub" data-es="Anuncios, webs, apps, redes sociales, reels, banners y fotografía de producto con IA generativa. Sin cámaras ni rodajes, con dirección humana en cada fotograma.">Commercials, websites, apps, social media, reels, banners and product photography made with generative AI. No cameras, no shoots, human direction in every frame.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-iri magnetic" href="#work" data-page="work" data-es="Ver trabajos">See the work</a>
+          <a class="btn btn-glass magnetic" href="#contact" data-page="contact" data-es="Cuéntanos tu idea">Tell us your idea</a>
+        </div>
+      </div>
+    </div>
+    <div class="hero-meta" aria-hidden="true"><span data-es="Gira la espiral · toca un fotograma">Scroll the spiral · tap a frame</span><span class="scroll-line"><i></i></span></div>
+  </section>
+
+  <section class="manifesto band" data-unlock="manifesto" data-en-label="The manifesto" data-es-label="El manifiesto">
+    <p class="manifesto-text" id="manifesto" data-es="Sin cámaras. Sin equipos de rodaje. Sin permisos de localización. Escribimos la idea, construimos el mundo y dirigimos cada fotograma con IA generativa hasta que parece más real que lo real. Luego lo ponemos a trabajar: en pantallas, en el feed y en las manos de tus clientes.">No cameras. No crews. No location permits. We write the idea, build the world and direct every frame with generative AI until it looks more real than real. Then we put it to work: on screens, in feeds and in your customers' hands.</p>
+    <div class="facts">
+      <div class="fact"><b data-count="0">0</b><span data-es="cámaras usadas">cameras used</span></div>
+      <div class="fact"><b data-count="7">7</b><span data-es="anuncios con IA en el portfolio">AI commercials in the reel</span></div>
+      <div class="fact"><b data-count="4">4</b><span data-es="webs en directo">live websites</span></div>
+      <div class="fact"><b data-count="20">20</b><span data-es="K seguidores en las cuentas que hemos llevado">K followers on accounts we've run</span></div>
+    </div>
+  </section>
+
+  <section class="levels band" data-unlock="levels" data-en-label="Level select" data-es-label="Selección de nivel">
+    <div class="sec-head">
+      <h2 class="h2" data-es="Elige nivel">Select your level</h2>
+      <p class="lead" data-es="Cada sección de la web es un nivel. Entra en el que quieras y ve desbloqueando todo lo que hacemos.">Every part of the site is a level. Jump into any of them and unlock everything we do.</p>
+    </div>
+    <div class="level-grid" id="levelGrid"></div>
+  </section>
+
+  <section class="tools" aria-label="Tools">
+    <p class="tools-label" data-es="Dirigimos los mejores modelos del momento">We direct the best models out there</p>
+    <div class="marquee" id="marqueeA"><div class="marquee-track"></div></div>
+    <div class="marquee marquee-rev" id="marqueeB"><div class="marquee-track"></div></div>
+  </section>
+</section>
+
+<!-- ================= WORK ================= -->
+<section class="page page-night" data-page="work" id="page-work" hidden>
+  <header class="phead">
+    <div class="phead-media"><video muted loop playsinline preload="none" data-src="media/ads/obsidian.mp4" poster="media/posters/obsidian.webp"></video></div>
+    <div class="phead-text">
+      <span class="phead-lvl" data-es="Nivel 1">Level 1</span>
+      <h1 class="phead-title" data-es="Trabajos">Work</h1>
+      <p class="phead-sub" data-es="Anuncios, webs, apps, foto y banners. MRB es nuestra marca concepto: oficio real, cliente ficticio. Lo que hacemos para marcas reales queda bajo confidencialidad.">Commercials, websites, apps, photography and banners. MRB is our in-house concept brand: real craft, fictional client. Work for real brands stays under NDA.</p>
+    </div>
+    <span class="phead-scroll" data-es="Haz scroll para entrar">Scroll to enter</span>
+  </header>
+
+  <nav class="subnav" aria-label="Work">
+    <button type="button" data-go="commercials" data-es="Anuncios">Commercials</button>
+    <button type="button" data-go="websites" data-es="Webs">Websites</button>
+    <button type="button" data-go="apps">Apps</button>
+    <button type="button" data-go="gallery" data-es="Foto y banners">Photo &amp; banners</button>
+  </nav>
+
+  <div class="commercials band" id="commercials" data-unlock="commercials" data-en-label="AI commercials" data-es-label="Anuncios con IA">
+    <div class="sub-head">
+      <h2 class="h3" data-es="Anuncios con IA">AI commercials</h2>
+      <p data-es="Toca uno para verlo. Ordenados del más logrado al último.">Tap one to watch it. Ordered from strongest to last.</p>
+    </div>
+    <div class="cine">
+      <div class="cine-screen" id="cineScreen">
+        <div class="cine-blur" id="cineBlur"></div>
+        <video id="cineVideo" muted playsinline preload="none"></video>
+        <button class="cine-play" id="cinePlay" type="button"><span class="cine-play-ic" aria-hidden="true"></span><span data-es="Ver con sonido">Watch with sound</span></button>
+        <div class="cine-hud"><span class="rec"><i></i><span data-es="Generado, no grabado">Generated, not filmed</span></span><span id="cineTime">00:00</span></div>
+      </div>
+      <div class="cine-side">
+        <div class="cine-info" id="cineInfo"></div>
+        <ol class="cine-list" id="cineList"></ol>
+      </div>
+    </div>
+  </div>
+
+  <div class="websites band" id="websites" data-unlock="websites" data-en-label="Websites" data-es-label="Webs">
+    <div class="sub-head">
+      <h2 class="h3" data-es="Webs">Websites</h2>
+      <p data-es="Diseñadas, escritas y programadas desde cero. Todas están en directo: entra y juega.">Designed, written and coded from scratch. All of them are live: go in and play.</p>
+    </div>
+    <div class="stack" id="siteStack"></div>
+  </div>
+
+  <div class="apps band" id="apps" data-unlock="apps" data-en-label="Apps" data-es-label="Apps">
+    <div class="sub-head">
+      <h2 class="h3" data-es="Tu web, convertida en app">Your website, as an app</h2>
+      <p data-es="Así quedan nuestras webs convertidas en apps para iPhone y Android: misma marca, mismo contenido y navegación nativa.">This is how our websites look as iPhone and Android apps: same brand, same content, native navigation.</p>
+    </div>
+    <div class="phones" id="phones"></div>
+  </div>
+
+  <div class="gallery band" id="gallery" data-unlock="gallery" data-en-label="Photo & banners" data-es-label="Foto y banners">
+    <div class="sub-head">
+      <h2 class="h3" data-es="Foto de producto, mundos y banners">Product photography, worlds &amp; banners</h2>
+      <p data-es="Joyería, packaging, moda, comida, personajes coherentes y banners listos para campaña.">Jewellery, packaging, fashion, food, consistent characters and campaign-ready banners.</p>
+    </div>
+    <div class="cols" id="galleryCols"></div>
+  </div>
+  <div class="next-level band"><a class="next-btn" href="#services" data-page="services"><span data-es="Siguiente nivel">Next level</span><b data-es="Servicios →">Services →</b></a></div>
+</section>
+
+<!-- ================= SERVICES ================= -->
+<section class="page" data-page="services" id="page-services" hidden>
+  <header class="phead">
+    <div class="phead-media"><video muted loop playsinline preload="none" data-src="media/ads/petal.mp4" poster="media/posters/petal.webp"></video></div>
+    <div class="phead-text">
+      <span class="phead-lvl" data-es="Nivel 2">Level 2</span>
+      <h1 class="phead-title" data-es="Servicios">Services</h1>
+      <p class="phead-sub" data-es="Un solo estudio para la idea, la imagen, el sitio donde vive y las redes que la mueven.">One studio for the idea, the image, the place it lives and the social channels that move it.</p>
+    </div>
+    <span class="phead-scroll" data-es="Haz scroll para entrar">Scroll to enter</span>
+  </header>
+  <section class="services" data-unlock="services" data-en-label="Services" data-es-label="Servicios">
+    <div class="services-head band">
+      <h2 class="h2" data-es="Lo que hacemos">What we make</h2>
+      <p class="lead" data-es="Todo pensado para vender, no solo para quedar bonito. Desliza para verlo todo.">Everything built to sell, not just to look good. Keep scrolling to see it all.</p>
+    </div>
+    <div class="services-pin" id="servicesPin"><div class="services-track" id="servicesTrack"></div></div>
+  </section>
+  <section class="process band" id="process" data-unlock="process" data-en-label="How we work" data-es-label="Cómo trabajamos">
+    <div class="process-side">
+      <h2 class="h2" data-es="Cómo trabajamos">How we work</h2>
+      <p class="lead" data-es="Cuatro pasos. Tú apruebas en cada uno y nada sale sin pasar por ojos humanos.">Four steps. You sign off on each one, and nothing ships without human eyes on it.</p>
+      <div class="process-meter"><i id="processFill"></i></div>
+    </div>
+    <ol class="steps" id="steps"></ol>
+  </section>
+  <div class="next-level band"><a class="next-btn" href="#studio" data-page="studio"><span data-es="Siguiente nivel">Next level</span><b data-es="Estudio →">Studio →</b></a></div>
+</section>
+
+<!-- ================= STUDIO ================= -->
+<section class="page" data-page="studio" id="page-studio" hidden>
+  <header class="phead">
+    <div class="phead-media"><img src="media/founder.webp" alt="" style="object-position:50% 25%"></div>
+    <div class="phead-text">
+      <span class="phead-lvl" data-es="Nivel 3">Level 3</span>
+      <h1 class="phead-title" data-es="Estudio">Studio</h1>
+      <p class="phead-sub" data-es="Datos y dirección creativa en el mismo equipo.">Data and creative direction in the same team.</p>
+    </div>
+    <span class="phead-scroll" data-es="Haz scroll para entrar">Scroll to enter</span>
+  </header>
+  <section class="studio band" data-unlock="about" data-en-label="About us" data-es-label="Sobre nosotros">
+    <div class="studio-photo">
+      <img src="media/founder.webp" alt="María Luisa Ros Bolea, founder of Neverfilmed" data-esa="María Luisa Ros Bolea, fundadora de Neverfilmed" loading="lazy" width="900" height="900">
+      <span class="studio-tag" data-es="Fundadora y directora creativa">Founder &amp; creative director</span>
+    </div>
+    <div class="studio-text">
+      <h2 class="h2" data-es="Sobre nosotros">About us</h2>
+      <p class="studio-quote" data-esh="Unimos <em>datos</em> y <em>dirección creativa</em> para que cada imagen tenga un motivo para existir.">We bring <em>data</em> and <em>creative direction</em> together, so every image has a reason to exist.</p>
+      <p data-es="Neverfilmed nace entre Murcia y Madrid como estudio creativo nativo en IA. Lo fundó María Luisa Ros Bolea, graduada en Comunicación Digital (CEU San Pablo), con un Máster en Big Data e Inteligencia Artificial (CEU) y seleccionada en el programa 100 Global Leaders CEU-Santander by Talentum.">Neverfilmed was born between Murcia and Madrid as an AI-native creative studio. It was founded by María Luisa Ros Bolea, a Digital Communication graduate (CEU San Pablo) with a Master's in Big Data and Artificial Intelligence (CEU), selected for the 100 Global Leaders CEU-Santander by Talentum programme.</p>
+      <p data-es="Su experiencia como modelo comercial y editorial, gestionando redes de marcas de lujo y salud, y su formación mensual en IA generativa hacen que sepamos lo que funciona delante de la cámara, en el feed y en los datos.">Her background as a commercial and editorial model, running social media for luxury and health brands, and her monthly training in generative AI mean we know what works in front of the camera, in the feed and in the data.</p>
+      <ul class="pillars">
+        <li><b data-es="Directores, no generadores">Directors, not generators</b><span data-es="Personajes, producto y luz coherentes de un plano a otro.">Consistent characters, product and light from shot to shot.</span></li>
+        <li><b data-es="Datos detrás de cada idea">Data behind every idea</b><span data-es="SEO, SEM, Meta y Google Ads para que lo bonito también convierta.">SEO, SEM, Meta and Google Ads so the beautiful stuff also converts.</span></li>
+        <li><b data-es="Bilingües de serie">Bilingual by default</b><span data-es="Inglés y español en webs, redes y campañas.">English and Spanish across sites, social and campaigns.</span></li>
+      </ul>
+      <div class="studio-links">
+        <a class="btn btn-ink" href="https://www.linkedin.com/in/marialuisarosbolea/" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a class="btn btn-glass" href="https://malurosbolea-ux.github.io/digital-strategy-portfolio/" target="_blank" rel="noopener" data-es="Portfolio de la fundadora ↗">Founder portfolio ↗</a>
+      </div>
+    </div>
+  </section>
+  <section class="faq band" id="faq" data-unlock="faq" data-en-label="FAQ" data-es-label="Preguntas frecuentes">
+    <h2 class="h2" data-es="Preguntas frecuentes">FAQ</h2>
+    <div class="faq-list" id="faqList"></div>
+  </section>
+  <div class="next-level band"><a class="next-btn" href="#pricing" data-page="pricing"><span data-es="Siguiente nivel">Next level</span><b data-es="Precios →">Pricing →</b></a></div>
+</section>
+
+<!-- ================= PRICING ================= -->
+<section class="page" data-page="pricing" id="page-pricing" hidden>
+  <header class="phead phead-orb">
+    <div class="phead-media"><div class="orb-art" aria-hidden="true"><i></i><i></i><i></i></div></div>
+    <div class="phead-text">
+      <span class="phead-lvl" data-es="Nivel 4">Level 4</span>
+      <h1 class="phead-title" data-es="Precios">Pricing</h1>
+      <p class="phead-sub" data-es="Negociables. Lo construimos alrededor de tu presupuesto.">Negotiable. We build it around your budget.</p>
+    </div>
+    <span class="phead-scroll" data-es="Haz scroll para entrar">Scroll to enter</span>
+  </header>
+  <section class="pricing band" data-unlock="plans" data-en-label="The plans" data-es-label="Los planes">
+    <div class="sec-head">
+      <h2 class="h2" data-es="Precios negociables">Negotiable pricing</h2>
+      <p class="lead" data-es="Cada marca tiene un presupuesto distinto, así que no tenemos tarifas cerradas. Dinos cuánto quieres invertir y construimos la propuesta alrededor.">Every brand has a different budget, so we don't do fixed rates. Tell us what you want to invest and we build the proposal around it.</p>
+    </div>
+    <div class="plans" id="plans"></div>
+    <p class="pricing-note" data-es="Presupuesto cerrado antes de empezar, sin sorpresas. Descuentos para startups y proyectos de varios entregables.">Fixed quote before we start, no surprises. Discounts for startups and multi-deliverable projects.</p>
+  </section>
+  <div class="next-level band"><a class="next-btn" href="#contact" data-page="contact"><span data-es="Último nivel">Final level</span><b data-es="Contacto →">Contact →</b></a></div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section class="page" data-page="contact" id="page-contact" hidden>
+  <section class="contact band" data-unlock="contact" data-en-label="Final level" data-es-label="Último nivel">
+    <div class="contact-side">
+      <span class="phead-lvl" data-es="Nivel 5">Level 5</span>
+      <h1 class="h2 contact-title" data-es="Hablemos de tu proyecto">Let's talk about your project</h1>
+      <p class="lead" data-es="Cuéntanos qué necesitas y con qué presupuesto. Te respondemos con una propuesta, un calendario y un primer concepto visual.">Tell us what you need and your budget. We reply with a proposal, a timeline and a first visual concept.</p>
+      <dl class="direct">
+        <div><dt>Email</dt><dd><a href="mailto:malurosbolea@gmail.com">malurosbolea@gmail.com</a></dd></div>
+        <div><dt data-es="Teléfono">Phone</dt><dd><a href="tel:+34692892183">+34 692 892 183</a></dd></div>
+        <div><dt data-es="Dónde">Where</dt><dd data-es="Murcia · Madrid · en remoto para todo el mundo">Murcia · Madrid · remote, worldwide</dd></div>
+      </dl>
+    </div>
+    <form class="form" id="contactForm" novalidate>
+      <div class="row2">
+        <label class="field"><span data-es="Nombre">Name</span><input id="fName" name="name" autocomplete="name" required></label>
+        <label class="field"><span>Email</span><input id="fEmail" name="email" type="email" autocomplete="email" required></label>
+      </div>
+      <label class="field"><span data-es="Marca o empresa">Brand or company</span><input id="fCompany" name="company" autocomplete="organization"></label>
+      <fieldset class="field chips-field"><legend data-es="¿Qué necesitas?">What do you need?</legend><div class="chips" id="fServices"></div></fieldset>
+      <div class="row2">
+        <label class="field"><span data-es="Presupuesto aproximado">Rough budget</span>
+          <select id="fBudget" name="budget">
+            <option value="Let's talk" data-es="Lo hablamos">Let's talk</option>
+            <option value="Under €1,000" data-es="Menos de 1.000 €">Under €1,000</option>
+            <option value="€1,000 – €3,000" data-es="1.000 – 3.000 €">€1,000 – €3,000</option>
+            <option value="€3,000 – €8,000" data-es="3.000 – 8.000 €">€3,000 – €8,000</option>
+            <option value="€8,000+" data-es="Más de 8.000 €">€8,000+</option>
+          </select>
+        </label>
+        <label class="field"><span data-es="¿Para cuándo?">When do you need it?</span>
+          <select id="fWhen" name="when">
+            <option value="Flexible">Flexible</option>
+            <option value="ASAP" data-es="Lo antes posible">As soon as possible</option>
+            <option value="This month" data-es="Este mes">This month</option>
+            <option value="Next quarter" data-es="El próximo trimestre">Next quarter</option>
+          </select>
+        </label>
+      </div>
+      <label class="field"><span data-es="Cuéntanos la idea">Tell us the idea</span><textarea id="fMsg" name="message" rows="4"></textarea></label>
+      <p class="form-error" id="formError" role="alert" hidden></p>
+      <button class="btn btn-iri btn-big" type="submit" data-es="Enviar propuesta">Send brief</button>
+      <div class="form-done" id="formDone" hidden>
+        <b data-es="¡Brief listo!">Brief ready!</b>
+        <p data-es="Hemos abierto tu correo con el mensaje preparado. Si no se ha abierto, copia el brief y envíalo a malurosbolea@gmail.com.">We've opened your email app with the message ready. If it didn't open, copy the brief and send it to malurosbolea@gmail.com.</p>
+        <button class="btn btn-glass" type="button" id="copyBrief" data-es="Copiar el brief">Copy the brief</button>
+      </div>
+    </form>
+  </section>
+</section>
+
+</main>
+
+<footer class="footer" id="footer">
+  <div class="footer-word" id="footerWord" aria-hidden="true">Neverfilmed</div>
+  <div class="footer-row band">
+    <p data-es="© 2026 Neverfilmed. Ni un solo fotograma de esta web se ha grabado.">© 2026 Neverfilmed. Not a single frame on this site was filmed.</p>
+    <nav aria-label="Footer">
+      <a href="#work" data-page="work" data-es="Trabajos">Work</a>
+      <a href="#services" data-page="services" data-es="Servicios">Services</a>
+      <a href="#pricing" data-page="pricing" data-es="Precios">Pricing</a>
+      <a href="https://github.com/malurosbolea-ux" target="_blank" rel="noopener">GitHub ↗</a>
+      <a href="https://www.tiktok.com/@boleadelmar" target="_blank" rel="noopener" data-es="Consejos de IA en TikTok ↗">AI tips on TikTok ↗</a>
+    </nav>
+  </div>
+</footer>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Video" data-lenis-prevent>
+  <div class="lightbox-inner">
+    <video id="lbVideo" controls playsinline></video>
+    <div class="lightbox-bar">
+      <span id="lbTitle"></span>
+      <a id="lbHD" href="#" target="_blank" rel="noopener" data-es="Ver en HD en Drive ↗">Watch in HD on Drive ↗</a>
+      <button type="button" class="lb-close" id="lbClose" data-es="Cerrar">Close</button>
+    </div>
+  </div>
+</div>
+
+<!-- Chatbot -->
+<div class="bot" id="bot">
+  <div class="bot-panel" id="botPanel" hidden data-lenis-prevent>
+    <div class="bot-head">
+      <span class="bot-avatar" aria-hidden="true"></span>
+      <div><b>Frame</b><small data-es="Asistente de Neverfilmed · responde al momento">Neverfilmed assistant · replies instantly</small></div>
+      <button type="button" class="bot-x" id="botClose" aria-label="Close">×</button>
+    </div>
+    <div class="bot-log" id="botLog" aria-live="polite"></div>
+    <div class="bot-quick" id="botQuick"></div>
+    <form class="bot-form" id="botForm">
+      <input id="botInput" autocomplete="off" placeholder="Ask about prices, social media, timing…" data-esp="Pregunta por precios, redes, plazos…" aria-label="Message">
+      <button type="submit" aria-label="Send">↑</button>
+    </form>
+  </div>
+  <button class="bot-orb" id="botOrb" type="button" aria-expanded="false" aria-controls="botPanel">
+    <span class="bot-orb-core" aria-hidden="true"></span>
+    <span class="bot-orb-text" data-es="Pregúntale a Frame">Ask Frame</span>
+  </button>
+</div>
+
+<script src="js/gsap.min.js"></script>
+<script src="js/ScrollTrigger.min.js"></script>
+<script src="js/lenis.min.js"></script>
+<script type="module" src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+# Neverfilmed
+
+> Neverfilmed is an AI creative agency based in Murcia and Madrid (Spain) that works remotely worldwide. It creates AI commercials, websites, online shops, iPhone and Android apps, social media content, branding and ad campaigns, in English and Spanish. Founded by María Luisa Ros Bolea. Prices are negotiable.
+
+Website: https://malurosbolea-ux.github.io/neverfilmed/
+Contact: the contact form at https://malurosbolea-ux.github.io/neverfilmed/#contact
+Founder: María Luisa Ros Bolea, graduate in Digital Communication (CEU San Pablo) with a Master's in Big Data and Artificial Intelligence (CEU). Portfolio: https://malurosbolea-ux.github.io/digital-strategy-portfolio/ · LinkedIn: https://www.linkedin.com/in/marialuisarosbolea/
+
+## What Neverfilmed creates
+- AI video & ads: AI commercials, TV & online spots, Brand films, Product launch videos, Reels & TikToks, UGC-style ads, AI models & avatars
+- Websites & e-commerce: Corporate websites, Online shops, Landing pages, 3D & interactive sites, Bilingual EN / ES sites, Portfolios, Web maintenance
+- Apps: iPhone & Android apps, Installable web apps (PWA), Booking & ordering apps, AI chatbots & assistants, Loyalty & club apps
+- Social media & growth: Social media management, Content creation, Community management, Meta Ads & Google Ads, SEO, SEM & GEO, Audits & monthly reports, Influencer marketing
+- Branding & design: Logos & visual identity, AI product photography, Packaging, Banners & display ads, Catalogues & lookbooks, Moodboards
+- Who we create for: Fashion & jewellery, Beauty & cosmetics, Restaurants & bars, Health & clinics, Real estate & hotels, Tech & startups, Local businesses
+
+## How it works
+1. Brief and moodboard.
+2. Consistent characters and product, frame by frame, directed with AI.
+3. Animation, edit, music and voice-over.
+4. Delivery in every format (16:9, 9:16, 1:1) for TV, web and social media.
+
+## AI tools
+Higgsfield, Seedance 2.5, Kling 3.0, Veo 3, Nano Banana Pro, Magnific, Omni 1.2, Google Flow, Canva AI. Websites are coded with HTML, CSS, JavaScript, Three.js and GSAP.
+
+## FAQ
+- Do you film anything at all? No. People, products, places and light are generated and directed with AI. If you send us product photos, we use them as reference so your product stays exact.
+- What does Neverfilmed create? AI commercials, websites and online shops, iPhone and Android apps, social media management and content, reels and TikToks, banners, AI product photography, branding, and Meta and Google Ads, SEO, SEM and GEO.
+- Do you manage social media accounts? Yes. We run Instagram, TikTok and LinkedIn: strategy, content calendar, posting, community management and a monthly report. We create the content too, so everything looks like one brand.
+- How much does it cost? Our prices are negotiable. Tell us your budget and we show you what we can make with it, with a fixed quote before we start.
+- Where is Neverfilmed based? In Murcia and Madrid, Spain. We work remotely with brands anywhere in the world.
+- Do you work in English and Spanish? Yes, both: websites, copy, social media and campaigns.
+- Which AI tools do you use? Higgsfield, Seedance 2.5, Kling 3.0, Veo 3, Nano Banana Pro, Magnific, Omni 1.2, Google Flow and Canva AI for images and video, plus Three.js and GSAP for the web.
+
+## En español
+Neverfilmed es una agencia creativa de IA con base en Murcia y Madrid. Creamos anuncios con IA, páginas web, tiendas online, apps para iPhone y Android, gestión de redes sociales, reels, branding, SEO, SEM y campañas de Meta y Google Ads. Precios negociables.

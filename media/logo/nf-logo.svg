@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs>
+<linearGradient id="aur" x1="0.1" y1="0" x2="0.9" y2="1"><stop offset="0" stop-color="#FFB8EE"/><stop offset="0.32" stop-color="#BFA4FF"/><stop offset="0.66" stop-color="#86B8FF"/><stop offset="1" stop-color="#7FF0E6"/></linearGradient>
+<linearGradient id="bd" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E9DEFF"/><stop offset="0.25" stop-color="#C9B8FF" stop-opacity="0.75"/><stop offset="0.55" stop-color="#9CC3FF" stop-opacity="0.25"/><stop offset="0.85" stop-color="#A6F4F0" stop-opacity="0.6"/><stop offset="1" stop-color="#A6F4F0"/></linearGradient>
+<linearGradient id="tile" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#171236"/><stop offset="1" stop-color="#07061a"/></linearGradient>
+<radialGradient id="halo" cx="0.42" cy="0.36" r="0.6"><stop offset="0" stop-color="#3a2b92" stop-opacity="0.45"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient>
+<linearGradient id="curtain" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#F3A9E8"/><stop offset="0.35" stop-color="#A98CFF"/><stop offset="0.7" stop-color="#6FA8FF"/><stop offset="1" stop-color="#6FF0E2"/></linearGradient>
+<linearGradient id="scan" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#FFFFFF" stop-opacity="0"/><stop offset="0.5" stop-color="#E8F8FF" stop-opacity="0.55"/><stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/></linearGradient>
+<radialGradient id="dotg"><stop offset="0" stop-color="#FFFFFF"/><stop offset="0.4" stop-color="#C8FFF9" stop-opacity="0.55"/><stop offset="1" stop-color="#7FF0E6" stop-opacity="0"/></radialGradient>
+<filter id="soft" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="2.2"/></filter>
+<filter id="big" x="-50%" y="-80%" width="200%" height="260%"><feGaussianBlur stdDeviation="7"/></filter>
+<clipPath id="tc"><rect x="6" y="6" width="88" height="88" rx="22"/></clipPath>
+</defs>
+<rect x="6" y="6" width="88" height="88" rx="22" fill="url(#tile)"/>
+<g clip-path="url(#tc)">
+ <rect x="6" y="6" width="88" height="88" fill="url(#halo)"/>
+ <ellipse cx="52" cy="98" rx="50" ry="13" fill="url(#curtain)" opacity="0.55" filter="url(#big)"/>
+ <ellipse cx="40" cy="96" rx="22" ry="6" fill="#FFB8EE" opacity="0.25" filter="url(#big)"/>
+ <rect x="14" y="80.6" width="72" height="0.35" fill="url(#scan)"/>
+</g>
+<rect x="6.4" y="6.4" width="87.2" height="87.2" rx="21.6" fill="none" stroke="url(#bd)" stroke-width="0.85"/>
+<path d="M27 72V28l24 36V28h22M51 49h17" fill="none" stroke="url(#aur)" stroke-width="8.2" stroke-linecap="round" stroke-linejoin="round" opacity="0.35" filter="url(#soft)"/>
+<path d="M27 72V28l24 36V28h22M51 49h17" fill="none" stroke="url(#aur)" stroke-width="7.2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M27 72V28l24 36V28h22M51 49h17" fill="none" stroke="#0b0923" stroke-width="5.6" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="73" cy="28" r="6.5" fill="url(#dotg)" opacity="0.8"/>
+<circle cx="73" cy="28" r="1.9" fill="#FFFFFF"/>
+</svg>

@@ -11,7 +11,7 @@ export function initStage(canvas, { images, reduce, onHover, onPick }) {
   renderer.setClearColor(0x000000, 0);
 
   const scene = new THREE.Scene();
-  scene.fog = new THREE.Fog(0xEDE8FF, 18, 60);
+  scene.fog = new THREE.Fog(0x07061A, 18, 60);
   const camera = new THREE.PerspectiveCamera(50, 1, 0.1, 200);
   camera.position.set(0, 0, 10);
 
@@ -46,14 +46,15 @@ export function initStage(canvas, { images, reduce, onHover, onPick }) {
       vec3 tex = mix(pastel, texture2D(uMap, vUv).rgb, uReady);
       vec3 col;
       if (gl_FrontFacing) { col = mix(tex, tex * 0.86 + pastel * 0.22, 0.2); col *= 1.0 + uHover * 0.12; }
-      else { col = mix(mix(pastel, vec3(1.0), 0.42), tex, 0.12); }
+      else { col = mix(pastel * 0.28, tex * 0.4, 0.2); }
       float wave = 0.5 + 0.5 * sin(uTime * 1.2 + vUv.x * 6.0 + vUv.y * 4.0);
       vec3 ir = mix(lil, blu, wave) + vec3(0.12);
       col = mix(col, ir, smoothstep(-0.04, 0.0, d) * 0.92);
-      col += pow(1.0 - abs(dot(normalize(vN), normalize(vV))), 2.0) * 0.3 * ir;
+      col += pow(1.0 - abs(dot(normalize(vN), normalize(vV))), 2.0) * 0.45 * ir;
+      col += smoothstep(-0.012, 0.0, d) * 0.35 * ir;
       float s = abs(fract((vUv.x + vUv.y * 0.5) * 0.5 - uTime * 0.06) - 0.5);
       col += smoothstep(0.035, 0.0, s) * 0.16;
-      col = mix(col, vec3(0.93, 0.91, 1.0), vFog);
+      col = mix(col, vec3(0.03, 0.025, 0.1), vFog);
       gl_FragColor = vec4(col, a * uFade);
     }`;
 
@@ -113,11 +114,29 @@ export function initStage(canvas, { images, reduce, onHover, onPick }) {
         vec4 mv = modelViewMatrix * vec4(p, 1.0); gl_PointSize = size * 10.0 * uPx / max(0.5, -mv.z); vA = 0.35 + 0.4 * size / 1.8;
         gl_Position = projectionMatrix * mv; }`,
     fragmentShader: `varying float vA; void main(){ float d = length(gl_PointCoord - 0.5); float a = smoothstep(0.5, 0.0, d);
-      gl_FragColor = vec4(mix(vec3(0.66,0.56,1.0), vec3(0.52,0.68,1.0), gl_PointCoord.x), a * vA); }`,
+      gl_FragColor = vec4(mix(vec3(0.80,0.72,1.0), vec3(0.62,0.95,0.95), gl_PointCoord.x), a * vA); }`,
     transparent: true, depthWrite: false
   });
   const dust = new THREE.Points(pg, pm);
   scene.add(dust);
+
+  // light-speed streaks for the intro jump
+  const SN = 900, sp = new Float32Array(SN * 6), sBase = new Float32Array(SN * 3);
+  for (let i = 0; i < SN; i++) {
+    const a = rnd() * Math.PI * 2, r = 1.2 + rnd() * 9, z = 10 - rnd() * 110;
+    sBase.set([Math.cos(a) * r, Math.sin(a) * r, z], i * 3);
+  }
+  const sg = new THREE.BufferGeometry(); sg.setAttribute('position', new THREE.BufferAttribute(sp, 3));
+  const smat = new THREE.LineBasicMaterial({ color: 0xCFC4FF, transparent: true, opacity: 0, depthWrite: false, blending: THREE.AdditiveBlending });
+  const streaks = new THREE.LineSegments(sg, smat); scene.add(streaks);
+  function setStreaks(len) {
+    for (let i = 0; i < SN; i++) {
+      const x = sBase[i * 3], y = sBase[i * 3 + 1], z = sBase[i * 3 + 2];
+      sp.set([x, y, z, x, y, z + len * (0.6 + (i % 7) / 7)], i * 6);
+    }
+    sg.attributes.position.needsUpdate = true;
+  }
+  setStreaks(0.05);
 
   // state
   let W = 1, H = 1, aspect = 1, scroll = 0, inView = true, active = true;
@@ -171,6 +190,8 @@ export function initStage(canvas, { images, reduce, onHover, onPick }) {
       camera.fov = 50 + e * 60;
       camera.rotation.set(0, 0, t * 0.03 + e * 1.4);
       tunnel.rotation.z = t * 0.05 + e * 2;
+      setStreaks(0.05 + e * 14); smat.opacity = Math.min(1, e * 2.2); streaks.rotation.z = t * 0.05 + e * 2;
+      camera.position.x = (Math.random() - 0.5) * e * 0.25; camera.position.y = (Math.random() - 0.5) * e * 0.25;
       if (p >= 1) { mode = 'landing'; if (resolver) { resolver(); resolver = null; } }
     } else if (mode === 'land') {
       const p = Math.min(1, (now - m0) / mDur);
@@ -212,10 +233,11 @@ export function initStage(canvas, { images, reduce, onHover, onPick }) {
     setActive(v) { active = v; canvas.style.visibility = v ? 'visible' : 'hidden'; },
     fly(ms) { mode = 'fly'; m0 = performance.now(); mDur = ms; return new Promise(r => { resolver = r; }); },
     land(ms) {
+      streaks.visible = false;
       tunnel.visible = false; group.visible = true; rig.visible = true;
       scene.fog.near = 30; scene.fog.far = 90;
       mode = 'land'; m0 = performance.now(); mDur = ms;
     },
-    skip() { tunnel.visible = false; group.visible = true; rig.visible = true; scene.fog.near = 30; scene.fog.far = 90; mode = 'home'; }
+    skip() { streaks.visible = false; tunnel.visible = false; group.visible = true; rig.visible = true; scene.fog.near = 30; scene.fog.far = 90; mode = 'home'; }
   };
 }
